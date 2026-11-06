@@ -5,3 +5,38 @@ body {
     margin: 0;
     padding: 0;
 }
+/* Dashboard layout */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    gap: 20px;
+}
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    background-color:rgb(4,4,87);
+    color: white;
+    padding: 25px 20px;
+}
+
+
+
+/* Navigation */
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    padding: 14px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.sidebar ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+}
