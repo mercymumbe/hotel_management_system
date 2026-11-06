@@ -5,12 +5,7 @@ body {
     margin: 0;
     padding: 0;
 }
-/* Dashboard layout */
-.dashboard-container {
-    display: flex;
-    min-height: 100vh;
-    gap: 20px;
-}
+
 /* Sidebar */
 .sidebar {
     width: 240px;
