@@ -33,46 +33,68 @@
 
     </aside>
 
-<!-- Main content -->
-<main class="main-content">
+    <!-- Main content -->
+    <main class="main-content">
 
-    <!-- Header Section-->
-    <section>
-        <header class="header">
-            <div>
-                <h1>overview</h1>
-            </div>
-            <div class="admin-info">
-                <span>Administrator</span>
-            </div>
+        <!-- Header Section-->
+        <section>
+            <header class="header">
+                <div>
+                    <h1>overview</h1>
+                </div>
+                <div class="admin-info">
+                    <span>Administrator</span>
+                </div>
 
-        </header>
-         <!-- Dashboard summary cards -->
-        <div class="Statistics-card">
+            </header>
+            <!-- Dashboard summary cards -->
+            <!-- Dashboard Statistics -->
+            <section class="Statistics-card">
 
-            <div class="card">
-                <h3>Total Rooms</h3>
-                <p>50</p>
-            </div>
+                <div class="card">
+                    <h3>Total Rooms</h3>
+                    <p id="totalRooms">20</p>
+                </div>
 
-            <div class="card">
-                <h3>Available Rooms</h3>
-                <p>46</p>
-            </div>
+                <div class="card">
+                    <h3>Available Rooms</h3>
+                    <p id="availableRooms">20</p>
+                </div>
 
-            <div class="card">
-                <h3>Booked Rooms</h3>
-                <p>4</p>
-            </div>
+                <div class="card">
+                    <h3>Total Bookings</h3>
+                    <p id="totalBookings">0</p>
+                </div>
 
-            <div class="card">
-                <h3>Total Customers</h3>
-                <p>4</p>
-            </div>
+                <div class="card">
+                    <h3>Total Customers</h3>
+                    <p id="totalCustomers">0</p>
+                </div>
 
-        </div>
-        <br>
-        <!-- Recent Bookings -->
+            </section>
+
+            <br>
+            <!-- Quick Actions -->
+            <section class="quick-actions">
+
+                <h2>Quick Actions</h2>
+
+                <div class="action-buttons">
+                    <div>
+                        <button><a href="bookings.html" class="action-btn">New Booking</a></button>
+                    </div>
+                    <div>
+                        <button> <a href="customers.html" class="action-btn"> Register Customer</a></button>
+                    </div>
+
+                    <div>
+                        <button> <a href="rooms.html" class="action-btn">Add Room</a></button>
+                    </div>
+        
+                </div>
+
+            </section>
+            <!-- Recent Bookings -->
             <section class="bookings">
 
                 <div class="section-header">
@@ -81,7 +103,7 @@
                     <button>Add Booking</button>
                 </div>
                 <br>
-                 <table border="1">
+                <table border="1">
 
                     <thead>
                         <tr>
@@ -137,8 +159,8 @@
 
             </section>
 
-        </main>
-<script src="script.js"></script>
-</body>
+    </main>
+    <script src="script.js"></script>
+    </body>
 
 </html>
