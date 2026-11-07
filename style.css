@@ -77,3 +77,27 @@ button{
     border-radius: 8px;
     box-shadow: 0 2px 8px rgb(38, 139, 216);
 }
+input{
+    border-radius: 10px;
+    width: 100%;
+    height: 30px;
+    background-color: white;
+    border: solid, black;
+    color:rgb(4,4,87); 
+}
+#roomType{
+   border-radius: 10px;
+    width: 100%;
+    height: 30px;
+    background-color: white;
+    border: solid, black;
+    color:rgb(4,4,87); 
+}
+#roomStatus{
+    border-radius: 10px;
+    width: 100%;
+    height: 30px;
+    background-color: white;
+    border: solid, black;
+    color:rgb(4,4,87);
+}
