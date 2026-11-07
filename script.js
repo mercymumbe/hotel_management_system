@@ -4,3 +4,5 @@ let rooms = JSON.parse(localStorage.getItem("rooms")) || [];
 // Get customers from localStorage
 let customers = JSON.parse(localStorage.getItem("customers")) || [];
 
+// Get bookings from localStorage
+let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
