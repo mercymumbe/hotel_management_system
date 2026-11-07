@@ -116,3 +116,17 @@ thead, th{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
+.customer-form{
+   background-color: white;
+    padding: 25px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(38, 139, 216);
+}  
+.customer-table{
+     background-color: white;
+    padding: 25px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(38, 139, 216);
+}
