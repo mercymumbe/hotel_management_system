@@ -69,3 +69,11 @@ button{
     color: white;
     border-radius: 5px;
 }
+/* room form section */
+.room-form{
+    background-color: white;
+    padding: 25px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(38, 139, 216);
+}
