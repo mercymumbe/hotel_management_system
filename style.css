@@ -101,3 +101,11 @@ input{
     border: solid, black;
     color:rgb(4,4,87);
 }
+/* room records section */
+.room-table {
+     background-color: white;
+    padding: 25px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(38, 139, 216);
+}
