@@ -72,7 +72,64 @@
             </div>
 
         </section>
+        <br>
+        
+        <!-- Select Room -->
+         <form>
+        <div class="form-group">
+            <label for="roomSelect">Select Room</label>
 
-        </body>
+            <select id="roomSelect" required>
+                <option>Choose room</option>
+            </select>
+        </div>
+<br>
+
+        <!-- Check-in Date -->
+        <div class="form-group">
+            <label for="checkIn">Check-in Date:</label>
+<br>
+            <input type="date" id="checkIn" required>
+        </div>
+<br>
+
+        <!-- Check-out Date -->
+        <div class="form-group">
+            <label for="checkOut">Check-out Date:</label>
+<br>
+            <input type="date" id="checkOut" required>
+        </div>
+<br>
+
+        <!-- Booking Status -->
+        <div class="form-group">
+            <label for="bookingStatus">Booking Status:</label>
+            <select id="bookingStatus" required>
+                <option value="Confirmed">Confirmed</option>
+                <option value="Pending">Pending</option>
+                <option value="Cancelled">Cancelled</option>
+            </select>
+        </div>
+<br>
+
+        <!-- Total Cost -->
+        <div class="form-group">
+            <label for="totalCost">Total Booking Cost (KSh):</label>
+<br>
+            <input type="text" id="totalCost" placeholder="Calculated automatically" readonly>
+        </div>
+
+<br>
+        <!-- Form Buttons -->
+        <div class="booking-buttons">
+
+            <button type="submit" class="save-btn" id="saveBookingBtn">
+                Save Booking
+            </button>
+        </div>
+         </form>
+    </main>
+
+            </body>
 
 </html>
