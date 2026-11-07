@@ -112,7 +112,7 @@ input{
 thead, th{
     font-weight: bold;
 }
-.room-grid{
+.container-grid{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
