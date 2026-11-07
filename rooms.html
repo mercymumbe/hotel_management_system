@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,8 +23,8 @@
         <!-- navigation links -->
         <nav>
             <ul>
-                <li><a href="index.html" >Dashboard</a></li>
-                <li><a href="rooms.html"class="active">Rooms</a></li>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="rooms.html" class="active">Rooms</a></li>
                 <li><a href="customers.html">Customers</a></li>
                 <li><a href="bookings.html">Bookings</a></li>
                 <li><a href="payments.html">Payments</a></li>
@@ -32,49 +33,91 @@
 
     </aside>
 
-<!-- Main content -->
-<main class="main-content">
+    <!-- Main content -->
+    <main class="main-content">
 
-    <!-- Header Section-->
-    <section>
-        <header class="header">
-            <div>
-                <h1>Rooms</h1>
+        <!-- Header Section-->
+        <section>
+            <header class="header">
+                <div>
+                    <h1>Rooms</h1>
+                </div>
+                <div class="admin-info">
+                    <span>Administrator</span>
+                </div>
+
+            </header>
+        </section>
+        <!-- Room Statistics -->
+        <section class="Statistics-card">
+
+            <div class="card">
+                <h3>Total Rooms</h3>
+                <p id="totalRooms">50</p>
             </div>
-            <div class="admin-info">
-                <span>Administrator</span>
+
+            <div class="card">
+                <h3>Available Rooms</h3>
+                <p id="availableRooms">46</p>
             </div>
 
-        </header>
-    </section>
-     <!-- Room Statistics -->
-            <section class="Statistics-card">
+            <div class="card">
+                <h3>Booked Rooms</h3>
+                <p id="bookedRooms">4e</p>
+            </div>
 
-               <div class="card">
-                    <h3>Total Rooms</h3>
-                    <p id="totalRooms">50</p>
+            <div class="card">
+                <h3>Occupied Rooms</h3>
+                <p id="occupiedRooms">1</p>
+            </div>
+
+        </section>
+        <!-- Add Room Form -->
+        <section class="room-form">
+
+            <h2>Add New Room</h2>
+
+            <form id="roomForm">
+
+                <div class="form-group">
+                    <label for="roomNumber">Room Number</label>
+                    <input type="number" id="roomNumber" placeholder="Enter room number" required>
                 </div>
-
-                <div class="card">
-                    <h3>Available Rooms</h3>
-                    <p id="availableRooms">46</p>
+<br>
+                <div class="form-group">
+                    <label for="roomType">Room Type</label>
+                    <select id="roomType" required>
+                        <option value="">Select room type</option>
+                        <option value="Single">Single</option>
+                        <option value="Double">Double</option>
+                        <option value="Suite">Suite</option>
+                    </select>
                 </div>
-
-                <div class="card">
-                    <h3>Booked Rooms</h3>
-                    <p id="bookedRooms">4e</p>
+<br>
+                <div class="form-group">
+                    <label for="roomPrice">Price Per Night (KSh)</label>
+                    <input type="number" id="roomPrice" placeholder="Enter room price" min="1" required>
                 </div>
-
-                <div class="card">
-                    <h3>Occupied Rooms</h3>
-                    <p id="occupiedRooms">1</p>
+<br>
+                <div class="form-group">
+                    <label for="roomStatus">Room Status</label>
+                    <select id="roomStatus" required>
+                        <option value="">Select status</option>
+                        <option value="Available">Available</option>
+                        <option value="Booked">Booked</option>
+                        <option value="Occupied">Occupied</option>
+                    </select>
                 </div>
+<br>
+                <button type="submit" class="save-btn">
+                    Save Room
+                </button>
 
-            
+            </form>
 
+        </section>
+    </main>
 
-            </section>
-            
-</main>
-</body>
-</html>            
+    </body>
+
+</html>
