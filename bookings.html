@@ -73,63 +73,103 @@
 
         </section>
         <br>
-        
+
         <!-- Select Room -->
-         <form>
-        <div class="form-group">
-            <label for="roomSelect">Select Room</label>
+        <form>
+            <div class="form-group">
+                <label for="roomSelect">Select Room</label>
 
-            <select id="roomSelect" required>
-                <option>Choose room</option>
-            </select>
-        </div>
-<br>
+                <select id="roomSelect" required>
+                    <option>Choose room</option>
+                </select>
+            </div>
+            <br>
 
-        <!-- Check-in Date -->
-        <div class="form-group">
-            <label for="checkIn">Check-in Date:</label>
-<br>
-            <input type="date" id="checkIn" required>
-        </div>
-<br>
+            <!-- Check-in Date -->
+            <div class="form-group">
+                <label for="checkIn">Check-in Date:</label>
+                <br>
+                <input type="date" id="checkIn" required>
+            </div>
+            <br>
 
-        <!-- Check-out Date -->
-        <div class="form-group">
-            <label for="checkOut">Check-out Date:</label>
-<br>
-            <input type="date" id="checkOut" required>
-        </div>
-<br>
+            <!-- Check-out Date -->
+            <div class="form-group">
+                <label for="checkOut">Check-out Date:</label>
+                <br>
+                <input type="date" id="checkOut" required>
+            </div>
+            <br>
 
-        <!-- Booking Status -->
-        <div class="form-group">
-            <label for="bookingStatus">Booking Status:</label>
-            <select id="bookingStatus" required>
-                <option value="Confirmed">Confirmed</option>
-                <option value="Pending">Pending</option>
-                <option value="Cancelled">Cancelled</option>
-            </select>
-        </div>
-<br>
+            <!-- Booking Status -->
+            <div class="form-group">
+                <label for="bookingStatus">Booking Status:</label>
+                <select id="bookingStatus" required>
+                    <option value="Confirmed">Confirmed</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Cancelled">Cancelled</option>
+                </select>
+            </div>
+            <br>
 
-        <!-- Total Cost -->
-        <div class="form-group">
-            <label for="totalCost">Total Booking Cost (KSh):</label>
-<br>
-            <input type="text" id="totalCost" placeholder="Calculated automatically" readonly>
-        </div>
+            <!-- Total Cost -->
+            <div class="form-group">
+                <label for="totalCost">Total Booking Cost (KSh):</label>
+                <br>
+                <input type="text" id="totalCost" placeholder="Calculated automatically" readonly>
+            </div>
 
-<br>
-        <!-- Form Buttons -->
-        <div class="booking-buttons">
+            <br>
+            <!-- Form Buttons -->
+            <div class="booking-buttons">
 
-            <button type="submit" class="save-btn" id="saveBookingBtn">
-                Save Booking
-            </button>
-        </div>
-         </form>
+                <button type="submit" class="save-btn" id="saveBookingBtn">
+                    Save Booking
+                </button>
+            </div>
+        </form>
+
+        <!-- Booking Records -->
+        <section class="booking-table">
+
+            <div>
+
+                <h2>All Bookings</h2>
+
+                <input type="text" id="bookingSearch" placeholder="Search bookings...">
+
+            </div>
+<br>
+            <div class="table-container">
+
+                <table border="1">
+
+                    <thead>
+                        <tr>
+                            <th>Booking ID</th>
+                            <th>Customer</th>
+                            <th>Room</th>
+                            <th>Check-in</th>
+                            <th>Check-out</th>
+                            <th>Nights</th>
+                            <th>Total Cost</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="bookingList">
+                        <!-- JavaScript will display bookings here -->
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
     </main>
 
-            </body>
+    </body>
 
 </html>
