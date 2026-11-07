@@ -109,3 +109,6 @@ input{
     border-radius: 8px;
     box-shadow: 0 2px 8px rgb(38, 139, 216);
 }
+thead, th{
+    font-weight: bold;
+}
