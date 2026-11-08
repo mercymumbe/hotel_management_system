@@ -17,20 +17,24 @@ const recentBookingListElement= document.getElementById("recentBookingList")
 // Function to display statistics
 function displayStatistics() {
 
-    // Display total rooms
-    totalRoomsElement.textContent = rooms.length;
+     let totalRooms = rooms.length;
+    let availableRooms = 0;
 
-    // Find rooms whose status is Available
-    const available = rooms.filter(room =>
-        String(room.status || "").toLowerCase() === "available"
-    );
+    // Count available rooms
+    for (let i = 0; i < rooms.length; i++) {
 
-    // Display available rooms
-    availableRoomsElement.textContent = available.length;
+        if (rooms[i].status === "Available") {
+            availableRooms = availableRooms + 1;
+        }
+    }
 
-    // Display total bookings
-    totalBookingsElement.textContent = bookings.length;
+    // Display the results
+    document.getElementById("totalRooms").textContent = totalRooms;
 
-    // Display total customers
-    totalCustomersElement.textContent = customers.length;
+    document.getElementById("availableRooms").textContent = availableRooms;
+
+    document.getElementById("totalBookings").textContent = bookings.length;
+
+    document.getElementById("totalCustomers").textContent = customers.length;
+
 }
