@@ -15,12 +15,12 @@ const totalRoomsElement = document.getElementById("totalRooms");
 const availableRoomsElement = document.getElementById("availableRooms");
 const totalBookingsElement = document.getElementById("totalBookings");
 const totalCustomersElement = document.getElementById("totalCustomers");
-const recentBookingListElement= document.getElementById("recentBookingList")
+const recentBookingListElement = document.getElementById("recentBookingList")
 
 // Function to display statistics
 function displayStatistics() {
 
-     let totalRooms = rooms.length;
+    let totalRooms = rooms.length;
     let availableRooms = 0;
 
     // Count available rooms
@@ -66,7 +66,7 @@ const roomSearch = document.getElementById("roomSearch");
 const roomList = document.getElementById("roomList");
 
 // save room records in the localstorage
- function saveRooms() {
+function saveRooms() {
     localStorage.setItem(
         "rooms",
         JSON.stringify(rooms)
@@ -100,10 +100,10 @@ function displayStatistics() {
 }
 
 // Display the statistics
-    totalRooms.textContent = total;
-    availableRooms.textContent = available;
-    bookedRooms.textContent = booked;
-    occupiedRooms.textContent = occupied;
+totalRooms.textContent = total;
+availableRooms.textContent = available;
+bookedRooms.textContent = booked;
+occupiedRooms.textContent = occupied;
 
 // display the recoded rooms in a tabe
 function displayRooms(roomRecords = rooms) {
@@ -142,21 +142,28 @@ function displayRooms(roomRecords = rooms) {
         priceCell.textContent = "KSh " +
             Number(room.price).toLocaleString("en-KE");
 
-        
-}
-// Create status label
-        let statusLabel = document.createElement("span");
-
-        statusLabel.textContent =
-            room.status.charAt(0).toUpperCase() +
-            room.status.slice(1);
-
-        statusLabel.classList.add("status");
-        statusLabel.classList.add(room.status);
-
-        statusCell.appendChild(statusLabel);
-
-        
 
     }
+    // Create status label
+    let statusLabel = document.createElement("span");
+
+    statusLabel.textContent =
+        room.status.charAt(0).toUpperCase() +
+        room.status.slice(1);
+
+    statusLabel.classList.add("status");
+    statusLabel.classList.add(room.status);
+
+    statusCell.appendChild(statusLabel);
+
+    // Add cells to the row
+    row.append(numberCell, typeCell, priceCell, statusCell);
+
+    // Add row to the table
+    roomList.appendChild(row);
+
+}
+
+
+
 
