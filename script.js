@@ -98,3 +98,11 @@ function displayStatistics() {
         }
     }
 }
+
+// Display the statistics
+    totalRooms.textContent = total;
+    availableRooms.textContent = available;
+    bookedRooms.textContent = booked;
+    occupiedRooms.textContent = occupied;
+
+
