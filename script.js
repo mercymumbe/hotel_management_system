@@ -164,6 +164,48 @@ function displayRooms(roomRecords = rooms) {
 
 }
 
+//  add new room button using eventlistener 
+roomForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    // Get information from the form
+    let number = roomNumber.value;
+    let type = roomType.value;
+    let price = roomPrice.value;
+    let status = roomStatus.value;
+
+    // Check if the room number already exists
+    let exists = rooms.some(room => room.roomNumber === number);
+
+    if (exists) {
+        alert("Room number already exists!");
+        return;
+    }
+
+    // Create a new room
+    let room = {
+        roomNumber: number,
+        roomType: type,
+        price: price,
+        status: status
+    };
+
+    // Add room to the list
+    rooms.push(room);
+
+    // Save and display rooms
+    saveRooms();
+    displayRooms();
+    displayStatistics();
+
+    // Clear the form
+    roomForm.reset();
+
+    alert("Room added successfully!");
+
+});
+
+
 
 
 
