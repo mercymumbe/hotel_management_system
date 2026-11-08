@@ -1,3 +1,6 @@
+
+// dashboard javascript
+
 // Get rooms from localStorage
 let rooms = JSON.parse(localStorage.getItem("rooms")) || [];
 
@@ -7,7 +10,7 @@ let customers = JSON.parse(localStorage.getItem("customers")) || [];
 // Get bookings from localStorage
 let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
 
-// Get the statistics elements from HTML
+// Get the statistics elements from  index.html
 const totalRoomsElement = document.getElementById("totalRooms");
 const availableRoomsElement = document.getElementById("availableRooms");
 const totalBookingsElement = document.getElementById("totalBookings");
@@ -38,3 +41,27 @@ function displayStatistics() {
     document.getElementById("totalCustomers").textContent = customers.length;
 
 }
+
+// rooms javascript
+
+// get html elements from rooms page 
+
+// room statistics section
+const totalRooms = document.getElementById("totalRooms");
+const availableRooms = document.getElementById("availableRooms");
+const bookedRooms = document.getElementById("bookedRooms");
+const occupiedRooms = document.getElementById("occupiedRooms");
+
+// add roomform section
+const roomForm = document.getElementById("roomForm");
+const roomNumber = document.getElementById("roomNumber");
+const roomType = document.getElementById("roomType");
+const roomPrice = document.getElementById("roomPrice");
+const roomStatus = document.getElementById("roomStatus");
+
+// search for room
+const roomSearch = document.getElementById("roomSearch");
+
+// table for the room list
+const roomList = document.getElementById("roomList");
+
