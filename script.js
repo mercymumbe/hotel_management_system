@@ -65,3 +65,12 @@ const roomSearch = document.getElementById("roomSearch");
 // table for the room list
 const roomList = document.getElementById("roomList");
 
+// save room records in the localstorage
+ function saveRooms() {
+    localStorage.setItem(
+        "rooms",
+        JSON.stringify(rooms)
+    );
+}
+
+
