@@ -124,4 +124,24 @@ function displayRooms(roomRecords = rooms) {
         return;
     }
 
+    // Display each room
+    for (let i = 0; i < roomRecords.length; i++) {
+
+        let room = roomRecords[i];
+
+        let row = document.createElement("tr");
+
+        let numberCell = document.createElement("td");
+        let typeCell = document.createElement("td");
+        let priceCell = document.createElement("td");
+        let statusCell = document.createElement("td");
+
+        numberCell.textContent = room.roomNumber;
+        typeCell.textContent = room.roomType;
+
+        priceCell.textContent = "KSh " +
+            Number(room.price).toLocaleString("en-KE");
+
+        
+}
 }
