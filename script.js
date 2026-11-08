@@ -73,4 +73,28 @@ const roomList = document.getElementById("roomList");
     );
 }
 
+// display room statistics
 
+function displayStatistics() {
+
+    let total = rooms.length;
+    let available = 0;
+    let booked = 0;
+    let occupied = 0;
+
+    // Check every room
+    for (let i = 0; i < rooms.length; i++) {
+
+        if (rooms[i].status === "available") {
+            available++;
+        }
+
+        else if (rooms[i].status === "booked") {
+            booked++;
+        }
+
+        else if (rooms[i].status === "occupied") {
+            occupied++;
+        }
+    }
+}
