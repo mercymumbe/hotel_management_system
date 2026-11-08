@@ -144,4 +144,19 @@ function displayRooms(roomRecords = rooms) {
 
         
 }
-}
+// Create status label
+        let statusLabel = document.createElement("span");
+
+        statusLabel.textContent =
+            room.status.charAt(0).toUpperCase() +
+            room.status.slice(1);
+
+        statusLabel.classList.add("status");
+        statusLabel.classList.add(room.status);
+
+        statusCell.appendChild(statusLabel);
+
+        
+
+    }
+
