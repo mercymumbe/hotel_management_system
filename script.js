@@ -105,4 +105,23 @@ function displayStatistics() {
     bookedRooms.textContent = booked;
     occupiedRooms.textContent = occupied;
 
+// display the recoded rooms in a tabe
+function displayRooms(roomRecords = rooms) {
+    roomList.innerHTML = "";
 
+    // Check if there are no rooms
+    if (roomRecords.length === 0) {
+
+        let row = document.createElement("tr");
+        let cell = document.createElement("td");
+
+        cell.colSpan = 4;
+        cell.textContent = "No rooms found";
+
+        row.appendChild(cell);
+        roomList.appendChild(row);
+
+        return;
+    }
+
+}
