@@ -23,7 +23,6 @@ const totalCost = document.getElementById("totalCost");
 
 // booking records
 const bookingList = document.getElementById("bookingList");
-const bookingSearch = document.getElementById("bookingSearch");
 
 // Get bookings from localStorage
 let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
@@ -120,11 +119,13 @@ function checkRoomAvailability(roomNumber, startDate, endDate) {
 
     for (let booking of bookings) {
 
-        if (booking.roomNumber === roomNumber &&
+        if (String(booking.roomNumber) === String(roomNumber) &&
             booking.status !== "Cancelled") {
 
             if (startDate < booking.checkOut && endDate > booking.checkIn) {
+
                 return false;
+
             }
         }
     }
