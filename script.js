@@ -333,3 +333,31 @@ function calculateNights() {
 
     return nights;
 }
+ 
+// calculate total cost
+function calculateTotalCost() {
+
+    let nights = calculateNights();
+    let price = 0;
+
+    // Get the selected room price
+    for (let room of rooms) {
+        if (room.roomNumber === roomSelect.value) {
+            price = room.price;
+        }
+    }
+
+    // Check if dates and room price are valid
+    if (nights <= 0 || price <= 0) {
+        totalCost.value = "";
+    } else {
+        totalCost.value = nights * price;
+    }
+}
+
+
+// Calculate cost when room or dates change
+roomSelect.addEventListener("change", calculateTotalCost);
+checkIn.addEventListener("change", calculateTotalCost);
+checkOut.addEventListener("change", calculateTotalCost);
+
