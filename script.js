@@ -593,8 +593,11 @@ function displayCustomers() {
             customers = customers.filter(function (item) {
                 return item.id !== customer.id;
 
+            });
+            // Save updated customers
+            localStorage.setItem("customers", JSON.stringify(customers));
 
-            })
+           
         });
     });
 }
