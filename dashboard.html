@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Pearl Hotel | Dashboard</title>
+    <!-- Link CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<!-- Main dashboard container -->
+<div class="dashboard-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <!-- Logo -->
+        <div class="logo">
+            <h2> Blue pearl Hotel</h2>
+
+        </div>
+        <!-- navigation links -->
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Dashboard</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="customers.html">Customers</a></li>
+                <li><a href="bookings.html">Bookings</a></li>
+                <li><a href="payments.html">Payments</a></li>
+            </ul>
+        </nav>
+
+    </aside>
+
+    <!-- Main content -->
+    <main class="main-content">
+
+        <!-- Header Section-->
+        <section>
+            <header class="header">
+                <div>
+                    <h1>overview</h1>
+                </div>
+                <div class="admin-info">
+                    <span>Administrator</span>
+                </div>
+
+            </header>
+            <!-- Dashboard summary cards -->
+            <!-- Dashboard Statistics -->
+            <section class="Statistics-card">
+
+                <div class="card">
+                    <h3>Total Rooms</h3>
+                    <p id="totalRooms">20</p>
+                </div>
+
+                <div class="card">
+                    <h3>Available Rooms</h3>
+                    <p id="availableRooms">20</p>
+                </div>
+
+                <div class="card">
+                    <h3>Total Bookings</h3>
+                    <p id="totalBookings">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Total Customers</h3>
+                    <p id="totalCustomers">0</p>
+                </div>
+
+            </section>
+
+            <br>
+            <!-- Quick Actions -->
+            <section class="quick-actions">
+
+                <h2>Quick Actions</h2>
+
+                <div class="action-buttons">
+                    <div>
+                        <button><a href="bookings.html" class="action-btn">New Booking</a></button>
+                    </div>
+                    <div>
+                        <button> <a href="customers.html" class="action-btn"> Register Customer</a></button>
+                    </div>
+
+                    <div>
+                        <button> <a href="rooms.html" class="action-btn">Add Room</a></button>
+                    </div>
+        
+                </div>
+
+            </section>
+            <!-- Recent Bookings -->
+            <section class="recent-bookings">
+
+                <div class="section-header">
+
+                    <h2>Recent Bookings</h2>
+
+                    <a href="bookings.html">View All</a>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table border="1">
+
+                        <thead>
+
+                            <tr>
+                                <th>Booking ID</th>
+                                <th>Customer</th>
+                                <th>Room</th>
+                                <th>Check-in</th>
+                                <th>Check-out</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="recentBookingList"></tbody>
+<!-- javascript will display the recent bookings -->
+                </table>
+
+            </section>
+
+    </main>
+    <script src="script.js"></script>
+    
+</body>
+</html>
