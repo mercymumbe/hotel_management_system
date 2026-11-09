@@ -622,21 +622,21 @@ customerForm.addEventListener("submit", function(event) {
     let phone = customerPhone.value;
     let email = customerEmail.value;
 
-    // Create a customer
+   // Create a customer object
     let customer = {
-        id: customers.length + 1,
+        id: "CUST" + Date.now(),
         name: name,
         phone: phone,
         email: email
     };
 
-    // Add customer to the list
+    // Add customer to the array
     customers.push(customer);
 
-    // Save customers
+    // Save customers in localStorage
     localStorage.setItem("customers", JSON.stringify(customers));
 
-    // Show customers in the table
+    // Display customers in the table
     displayCustomers();
 
     // Clear the form
