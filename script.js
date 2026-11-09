@@ -259,4 +259,10 @@ loadRooms();
 
 
 // bookings page javascript
+// get html elements for the booking page
 
+// booking statistics section 
+const totalBookings = document.getElementById("totalBookings");
+const confirmedBookings = document.getElementById("confirmedBookings");
+const pendingBookings = document.getElementById("pendingBookings");
+const cancelledBookings = document.getElementById("cancelledBookings");
