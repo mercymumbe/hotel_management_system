@@ -289,3 +289,17 @@ const bookingSearch = document.getElementById("bookingSearch");
 function saveBookings() {
     localStorage.setItem("bookings", JSON.stringify(bookings));
 }
+
+// display customers
+function displayCustomers() {
+
+    for (let i = 0; i < customers.length; i++) {
+
+        let option = document.createElement("option");
+
+        option.value = customers[i].customerId;
+        option.textContent = customers[i].fullName;
+
+        customerSelect.appendChild(option);
+    }
+}
