@@ -558,6 +558,7 @@ function deleteBooking(bookingId) {
 
 // customers page javascript
 
+
 // get html elements for form section in customers page
 let customerForm = document.getElementById("customerForm");
 
@@ -585,21 +586,30 @@ function displayCustomers() {
             <td>${customer.name}</td>
             <td>${customer.phone}</td>
             <td>${customer.email}</td>
-            <td><button class="delete-btn">Delete</button></td>
+            <td>
+            <button class="delete-btn">Delete</button>
+            </td>
         `;
-        // Add delete functionality
-        row.querySelector(".delete-btn").addEventListener("click", function () {
+        // Delete customer
+        row.querySelector(".delete-btn").addEventListener("click", function() {
 
-            customers = customers.filter(function (item) {
+            customers = customers.filter(function(item) {
                 return item.id !== customer.id;
-
             });
-            // Save updated customers
+
+            // Save the updated list
             localStorage.setItem("customers", JSON.stringify(customers));
+
+            // Display updated customers
             displayCustomers();
+
         });
+
         customerList.appendChild(row);
+
     });
+
+    // Update total customers
     totalCustomers.textContent = customers.length;
 }
 
