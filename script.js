@@ -281,3 +281,7 @@ const checkOut = document.getElementById("checkOut");
 const bookingStatus = document.getElementById("bookingStatus");
 const totalCost = document.getElementById("totalCost");
 
+// booking records
+const bookingList = document.getElementById("bookingList");
+const bookingSearch = document.getElementById("bookingSearch");
+
