@@ -568,3 +568,26 @@ let customerEmail = document.getElementById("customerEmail");
 // Get table and statistics elements
 let customerList = document.getElementById("customerList");
 let totalCustomers = document.getElementById("totalCustomers");
+
+// display function
+function displayCustomers() {
+
+    // Clear the table first
+    customerList.innerHTML = "";
+
+    // Go through each customer
+    customers.forEach(function(customer) {
+
+        let row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${customer.id}</td>
+            <td>${customer.name}</td>
+            <td>${customer.phone}</td>
+            <td>${customer.email}</td>
+            <td><button class="delete-btn">Delete</button></td>
+        `;
+
+        
+})
+}
