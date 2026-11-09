@@ -564,3 +564,7 @@ let customerForm = document.getElementById("customerForm");
 let customerName = document.getElementById("customerName");
 let customerPhone = document.getElementById("customerPhone");
 let customerEmail = document.getElementById("customerEmail");
+
+// Get table and statistics elements
+let customerList = document.getElementById("customerList");
+let totalCustomers = document.getElementById("totalCustomers");
