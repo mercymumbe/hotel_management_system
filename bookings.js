@@ -220,10 +220,10 @@ function displayBookings(records) {
 }
 
 // save the booking
-bookingForm.addEventListener("submit", function (event) {
+bookingForm.addEventListener("submit", function(event) {
 
     event.preventDefault();
-
+    
     // Get values from the form
     let customerId = customerSelect.value;
     let roomNumber = roomSelect.value;
