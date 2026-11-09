@@ -643,3 +643,5 @@ customerForm.addEventListener("submit", function(event) {
     customerForm.reset();
 
 });
+// Display saved customers 
+displayCustomers();
