@@ -377,3 +377,11 @@ function checkRoomAvailability(roomNumber, startDate, endDate) {
 
     return true;
 }
+
+// booking ID
+function generateBookingId() {
+
+    let bookingNumber = bookings.length + 1;
+
+    return "BK" + bookingNumber;
+}
