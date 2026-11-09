@@ -285,3 +285,7 @@ const totalCost = document.getElementById("totalCost");
 const bookingList = document.getElementById("bookingList");
 const bookingSearch = document.getElementById("bookingSearch");
 
+// save booking records in the local storage.
+function saveBookings() {
+    localStorage.setItem("bookings", JSON.stringify(bookings));
+}
