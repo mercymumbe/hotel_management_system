@@ -58,7 +58,6 @@ function displayRooms() {
 
     for (let i = 0; i < rooms.length; i++) {
 
-        // Only display available rooms
         if (rooms[i].status === "Available") {
 
             let option = document.createElement("option");
@@ -69,9 +68,14 @@ function displayRooms() {
                 rooms[i].roomType + " - KSh " + rooms[i].price;
 
             roomSelect.appendChild(option);
+
         }
+
     }
+
 }
+
+
 
 // calculate number of nights
 
@@ -95,8 +99,8 @@ function calculateTotalCost() {
 
     // Get the selected room price
     for (let room of rooms) {
-        if (room.roomNumber === roomSelect.value) {
-            price = room.price;
+        if (String(room.roomNumber) === roomSelect.value) {
+            price = Number(room.price);
         }
     }
 
