@@ -272,3 +272,7 @@ const bookingForm = document.getElementById("bookingForm")
 
 const customerSelect = document.getElementById("customerSelect");
 const roomSelect = document.getElementById("roomSelect");
+
+// checkin and checkouts dates
+const checkIn = document.getElementById("checkIn");
+const checkOut = document.getElementById("checkOut");
