@@ -40,8 +40,8 @@ function displayCustomers() {
 
         let option = document.createElement("option");
 
-        option.value = customers[i].customerId;
-        option.textContent = customers[i].fullName;
+        option.value = customers[i].id;
+        option.textContent = customers[i].name;
 
         customerSelect.appendChild(option);
     }
