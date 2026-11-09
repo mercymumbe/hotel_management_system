@@ -539,3 +539,19 @@ bookingForm.addEventListener("submit", function(event) {
     alert("Booking saved successfully!");
 });
 
+// deleting booking records
+function deleteBooking(bookingId) {
+
+    let answer = confirm("Are you sure you want to delete this booking?");
+
+    if (!answer) return;
+
+    bookings = bookings.filter(function(booking) {
+        return booking.bookingId !== bookingId;
+    });
+
+    saveBookings();
+
+    displayBookings(bookings);
+    displayStatistics();
+}
