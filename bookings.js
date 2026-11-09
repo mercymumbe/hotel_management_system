@@ -59,14 +59,18 @@ function displayRooms() {
 
     for (let i = 0; i < rooms.length; i++) {
 
-        let option = document.createElement("option");
+        // Only display available rooms
+        if (rooms[i].status === "Available") {
 
-        option.value = rooms[i].roomNumber;
+            let option = document.createElement("option");
 
-        option.textContent = rooms[i].roomNumber + " - " +
-            rooms[i].roomType + " - KSh " + rooms[i].price;
+            option.value = rooms[i].roomNumber;
 
-        roomSelect.appendChild(option);
+            option.textContent = rooms[i].roomNumber + " - " +
+                rooms[i].roomType + " - KSh " + rooms[i].price;
+
+            roomSelect.appendChild(option);
+        }
     }
 }
 
