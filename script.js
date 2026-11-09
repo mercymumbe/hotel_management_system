@@ -205,7 +205,7 @@ roomForm.addEventListener("submit", function (event) {
 
 });
 
-roomSearch.addEventListener("input", function() {
+roomSearch.addEventListener("input", function () {
 
     let searchValue = roomSearch.value.toLowerCase();
 
@@ -223,28 +223,28 @@ roomSearch.addEventListener("input", function() {
     displayRooms(matchingRooms);
 
 });
-  // Create a new room
-    let newRoom = {
-        roomNumber: newRoomNumber,
-        roomType: newRoomType,
-        price: newRoomPrice,
-        status: newRoomStatus
-    };
+// Create a new room
+let newRoom = {
+    roomNumber: newRoomNumber,
+    roomType: newRoomType,
+    price: newRoomPrice,
+    status: newRoomStatus
+};
 
-    // Add room to the rooms array
-    rooms.push(newRoom);
+// Add room to the rooms array
+rooms.push(newRoom);
 
-    // Save rooms
-    saveRooms();
+// Save rooms
+saveRooms();
 
-    // Update the page
-    displayRooms();
-    displayStatistics();
+// Update the page
+displayRooms();
+displayStatistics();
 
-    // Clear the form
-    roomForm.reset();
+// Clear the form
+roomForm.reset();
 
-    alert("Room added successfully!");
+alert("Room added successfully!");
 
 
 function loadRooms() {
@@ -323,7 +323,7 @@ function displayRooms() {
 // calculate number of nights
 
 function calculateNights() {
-     if (checkIn.value === "" || checkOut.value === "") {
+    if (checkIn.value === "" || checkOut.value === "") {
         return 0;
     }
     let start = new Date(checkIn.value);
@@ -333,7 +333,7 @@ function calculateNights() {
 
     return nights;
 }
- 
+
 // calculate total cost
 function calculateTotalCost() {
 
@@ -458,7 +458,7 @@ function displayBookings(records) {
         let deleteButton = row.querySelector("button");
 
         // Delete booking when clicked
-        deleteButton.addEventListener("click", function() {
+        deleteButton.addEventListener("click", function () {
             deleteBooking(booking.bookingId);
         });
         bookingList.appendChild(row);
@@ -466,7 +466,7 @@ function displayBookings(records) {
 }
 
 // save the booking
-bookingForm.addEventListener("submit", function(event) {
+bookingForm.addEventListener("submit", function (event) {
 
     event.preventDefault();
 
@@ -546,7 +546,7 @@ function deleteBooking(bookingId) {
 
     if (!answer) return;
 
-    bookings = bookings.filter(function(booking) {
+    bookings = bookings.filter(function (booking) {
         return booking.bookingId !== bookingId;
     });
 
@@ -555,7 +555,7 @@ function deleteBooking(bookingId) {
     displayBookings(bookings);
     displayStatistics();
 }
-  
+
 // customers page javascript
 
 // get html elements for form section in customers page
@@ -576,7 +576,7 @@ function displayCustomers() {
     customerList.innerHTML = "";
 
     // Go through each customer
-    customers.forEach(function(customer) {
+    customers.forEach(function (customer) {
 
         let row = document.createElement("tr");
 
@@ -587,7 +587,14 @@ function displayCustomers() {
             <td>${customer.email}</td>
             <td><button class="delete-btn">Delete</button></td>
         `;
+        // Add delete functionality
+        row.querySelector(".delete-btn").addEventListener("click", function () {
 
-        
-})
+            customers = customers.filter(function (item) {
+                return item.id !== customer.id;
+
+
+            })
+        });
+    });
 }
