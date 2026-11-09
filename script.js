@@ -555,3 +555,12 @@ function deleteBooking(bookingId) {
     displayBookings(bookings);
     displayStatistics();
 }
+  
+// customers page javascript
+
+// get html elements for form section in customers page
+let customerForm = document.getElementById("customerForm");
+
+let customerName = document.getElementById("customerName");
+let customerPhone = document.getElementById("customerPhone");
+let customerEmail = document.getElementById("customerEmail");
