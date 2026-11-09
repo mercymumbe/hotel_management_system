@@ -75,62 +75,70 @@
         <br>
 
         <!-- Select Room form section -->
-         
-            <section class="select-form">
-        <form>
-            <div class="form-group">
-                <label for="roomSelect">Select Room</label>
 
-                <select id="roomSelect" required>
-                    <option>Choose room</option>
-                </select>
-            </div>
-            <br>
+        <section class="select-form">
+            <form>
+                <div class="form-group">
+                    <label for="customerSelect">Select Customer:</label>
 
-            <!-- Check-in Date -->
-            <div class="form-group">
-                <label for="checkIn">Check-in Date:</label>
+                    <select id="customerSelect" required>
+                        <option value="">Choose customer</option>
+                    </select>
+                </div>
                 <br>
-                <input type="date" id="checkIn" required>
-            </div>
-            <br>
+                <div class="form-group">
+                    <label for="roomSelect">Select Room</label>
 
-            <!-- Check-out Date -->
-            <div class="form-group">
-                <label for="checkOut">Check-out Date:</label>
+                    <select id="roomSelect" required>
+                        <option>Choose room</option>
+                    </select>
+                </div>
                 <br>
-                <input type="date" id="checkOut" required>
-            </div>
-            <br>
 
-            <!-- Booking Status -->
-            <div class="form-group">
-                <label for="bookingStatus">Booking Status:</label>
-                <select id="bookingStatus" required>
-                    <option value="Confirmed">Confirmed</option>
-                    <option value="Pending">Pending</option>
-                    <option value="Cancelled">Cancelled</option>
-                </select>
-            </div>
-            <br>
-
-            <!-- Total Cost -->
-            <div class="form-group">
-                <label for="totalCost">Total Booking Cost (KSh):</label>
+                <!-- Check-in Date -->
+                <div class="form-group">
+                    <label for="checkIn">Check-in Date:</label>
+                    <br>
+                    <input type="date" id="checkIn" required>
+                </div>
                 <br>
-                <input type="text" id="totalCost" placeholder="Calculated automatically" readonly>
-            </div>
 
-            <br>
-            <!-- Form Buttons -->
-            <div class="booking-buttons">
+                <!-- Check-out Date -->
+                <div class="form-group">
+                    <label for="checkOut">Check-out Date:</label>
+                    <br>
+                    <input type="date" id="checkOut" required>
+                </div>
+                <br>
 
-                <button type="submit" class="save-btn" id="saveBookingBtn">
-                    Save Booking
-                </button>
-            </div>
-        </form>
-            </section>
+                <!-- Booking Status -->
+                <div class="form-group">
+                    <label for="bookingStatus">Booking Status:</label>
+                    <select id="bookingStatus" required>
+                        <option value="Confirmed">Confirmed</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Cancelled">Cancelled</option>
+                    </select>
+                </div>
+                <br>
+
+                <!-- Total Cost -->
+                <div class="form-group">
+                    <label for="totalCost">Total Booking Cost (KSh):</label>
+                    <br>
+                    <input type="text" id="totalCost" placeholder="Calculated automatically" readonly>
+                </div>
+
+                <br>
+                <!-- Form Buttons -->
+                <div class="booking-buttons">
+
+                    <button type="submit" class="save-btn" id="saveBookingBtn">
+                        Save Booking
+                    </button>
+                </div>
+            </form>
+        </section>
 
         <!-- Booking Records -->
         <section class="booking-table">
@@ -142,7 +150,7 @@
                 <input type="text" id="bookingSearch" placeholder="Search bookings...">
 
             </div>
-<br>
+            <br>
             <div class="table-container">
 
                 <table border="1">
@@ -171,7 +179,7 @@
         </section>
 
     </main>
-<script src="script.js"></script>
+    <script src="script.js"></script>
     </body>
 
 </html>
