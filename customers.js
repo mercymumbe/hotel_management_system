@@ -12,6 +12,9 @@ let customerEmail = document.getElementById("customerEmail");
 let customerList = document.getElementById("customerList");
 let totalCustomers = document.getElementById("totalCustomers");
 
+// Get customers from localStorage
+let customers = JSON.parse(localStorage.getItem("customers")) || [];
+
 // display function
 function displayCustomers() {
 
