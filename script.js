@@ -361,3 +361,19 @@ roomSelect.addEventListener("change", calculateTotalCost);
 checkIn.addEventListener("change", calculateTotalCost);
 checkOut.addEventListener("change", calculateTotalCost);
 
+// check available rooms
+function checkRoomAvailability(roomNumber, startDate, endDate) {
+
+    for (let booking of bookings) {
+
+        if (booking.roomNumber === roomNumber &&
+            booking.status !== "Cancelled") {
+
+            if (startDate < booking.checkOut && endDate > booking.checkIn) {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
