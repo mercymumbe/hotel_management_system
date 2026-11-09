@@ -205,7 +205,57 @@ roomForm.addEventListener("submit", function (event) {
 
 });
 
+roomSearch.addEventListener("input", function() {
 
+    let searchValue = roomSearch.value.toLowerCase();
+
+    let matchingRooms = [];
+
+    for (let i = 0; i < rooms.length; i++) {
+
+        if (rooms[i].roomNumber.toLowerCase().includes(searchValue)) {
+
+            matchingRooms.push(rooms[i]);
+
+        }
+    }
+
+    displayRooms(matchingRooms);
+
+});
+  // Create a new room
+    let newRoom = {
+        roomNumber: newRoomNumber,
+        roomType: newRoomType,
+        price: newRoomPrice,
+        status: newRoomStatus
+    };
+
+    // Add room to the rooms array
+    rooms.push(newRoom);
+
+    // Save rooms
+    saveRooms();
+
+    // Update the page
+    displayRooms();
+    displayStatistics();
+
+    // Clear the form
+    roomForm.reset();
+
+    alert("Room added successfully!");
+
+
+function loadRooms() {
+
+    displayRooms();
+    displayStatistics();
+
+}
+
+// Run the function
+loadRooms();
 
 
 
