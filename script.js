@@ -319,3 +319,17 @@ function displayRooms() {
         roomSelect.appendChild(option);
     }
 }
+
+// calculate number of nights
+
+function calculateNights() {
+     if (checkIn.value === "" || checkOut.value === "") {
+        return 0;
+    }
+    let start = new Date(checkIn.value);
+    let end = new Date(checkOut.value);
+
+    let nights = (end - start) / (1000 * 60 * 60 * 24);
+
+    return nights;
+}
