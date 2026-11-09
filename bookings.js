@@ -223,7 +223,7 @@ function displayBookings(records) {
 bookingForm.addEventListener("submit", function(event) {
 
     event.preventDefault();
-    
+
     // Get values from the form
     let customerId = customerSelect.value;
     let roomNumber = roomSelect.value;
@@ -234,14 +234,14 @@ bookingForm.addEventListener("submit", function(event) {
     let nights = calculateNights();
 
     // Check if customer and room are selected
-    if (customerId === "" || roomNumber === "") {
+     if (customerId === "" || roomNumber === "") {
         alert("Please select a customer and a room.");
         return;
     }
 
     // Check the dates
-    if (nights <= 0) {
-        alert("Check-out date must be after check-in date.");
+     if (nights <= 0) {
+        alert("Check-out must be after check-in.");
         return;
     }
 
