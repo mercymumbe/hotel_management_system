@@ -276,3 +276,8 @@ const roomSelect = document.getElementById("roomSelect");
 // checkin and checkouts dates
 const checkIn = document.getElementById("checkIn");
 const checkOut = document.getElementById("checkOut");
+
+// booking status and the cost
+const bookingStatus = document.getElementById("bookingStatus");
+const totalCost = document.getElementById("totalCost");
+
