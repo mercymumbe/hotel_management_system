@@ -28,6 +28,13 @@ const bookingSearch = document.getElementById("bookingSearch");
 // Get bookings from localStorage
 let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
 
+// get customers from the localstorage
+let customers = JSON.parse(localStorage.getItem("customers")) || [];
+
+// get rooms from localStorage
+let rooms = JSON.parse(localStorage.getItem("rooms")) || [];
+
+
 // save booking records in the local storage.
 function saveBookings() {
     localStorage.setItem("bookings", JSON.stringify(bookings));
@@ -177,8 +184,8 @@ function displayBookings(records) {
         let customerName = "Unknown Customer";
 
         for (let customer of customers) {
-            if (customer.customerId === booking.customerId) {
-                customerName = customer.fullName;
+            if (customer.id === booking.customerId) {
+                customerName = customer.name;
             }
         }
 
