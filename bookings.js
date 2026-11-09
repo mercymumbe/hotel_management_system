@@ -99,7 +99,7 @@ function calculateTotalCost() {
 
     // Get the selected room price
     for (let room of rooms) {
-        if (String(room.roomNumber) === roomSelect.value) {
+         if (String(room.roomNumber) === roomSelect.value) {
             price = Number(room.price);
         }
     }
@@ -153,27 +153,31 @@ function displayStatistics() {
     let pending = 0;
     let cancelled = 0;
 
-    for (let i = 0; i < bookings.length; i++) {
+    for (let booking of bookings) {
 
-        if (bookings[i].status === "Confirmed") {
+        if (booking.status === "Confirmed") {
             confirmed++;
         }
 
-        if (bookings[i].status === "Pending") {
+        if (booking.status === "Pending") {
             pending++;
         }
 
-        if (bookings[i].status === "Cancelled") {
+        if (booking.status === "Cancelled") {
             cancelled++;
         }
+
     }
 
     totalBookings.textContent = bookings.length;
-    confirmedBookings.textContent = confirmed;
-    pendingBookings.textContent = pending;
-    cancelledBookings.textContent = cancelled;
-}
 
+    confirmedBookings.textContent = confirmed;
+
+    pendingBookings.textContent = pending;
+
+    cancelledBookings.textContent = cancelled;
+
+}
 // display booking records in a table
 function displayBookings(records) {
 
