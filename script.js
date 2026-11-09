@@ -303,3 +303,19 @@ function displayCustomers() {
         customerSelect.appendChild(option);
     }
 }
+// display for rooms
+
+function displayRooms() {
+
+    for (let i = 0; i < rooms.length; i++) {
+
+        let option = document.createElement("option");
+
+        option.value = rooms[i].roomNumber;
+
+        option.textContent = rooms[i].roomNumber + " - " +
+            rooms[i].roomType + " - KSh " + rooms[i].price;
+
+        roomSelect.appendChild(option);
+    }
+}
