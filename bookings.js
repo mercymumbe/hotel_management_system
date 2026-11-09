@@ -266,9 +266,21 @@ bookingForm.addEventListener("submit", function(event) {
 
     for (let room of rooms) {
 
-        if (String(room.roomNumber) === roomNumber) {
+        if (String(room.roomNumber) === roomNumber &&
+            room.status === "Available") {
+
             price = Number(room.price);
+
         }
+
+    }
+
+    if (price <= 0) {
+
+        alert("The selected room is not available.");
+
+        return;
+
     }
 
     // Calculate total cost
