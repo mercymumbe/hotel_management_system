@@ -510,6 +510,32 @@ bookingForm.addEventListener("submit", function(event) {
     // Calculate total cost
     let cost = nights * price;
 
-    
+    // Create a new booking
+    let newBooking = {
+        bookingId: generateBookingId(),
+        customerId: customerId,
+        roomNumber: roomNumber,
+        checkIn: startDate,
+        checkOut: endDate,
+        nights: nights,
+        totalCost: cost,
+        status: status
+    };
+
+    // Add booking to the array
+    bookings.push(newBooking);
+
+    // Save booking
+    saveBookings();
+
+    // Update the page
+    displayBookings(bookings);
+    displayStatistics();
+
+    // Clear the form
+    bookingForm.reset();
+    totalCost.value = "";
+
+    alert("Booking saved successfully!");
 });
 
