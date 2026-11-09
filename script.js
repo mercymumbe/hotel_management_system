@@ -415,4 +415,52 @@ function displayStatistics() {
     cancelledBookings.textContent = cancelled;
 }
 
+// display booking records in a table
+function displayBookings(records) {
 
+    // Clear the table
+    bookingList.innerHTML = "";
+
+    // Check if there are no bookings
+    if (records.length === 0) {
+        bookingList.innerHTML = "<tr><td colspan='9'>No bookings found</td></tr>";
+        return;
+    }
+
+    // Go through each booking
+    for (let booking of records) {
+
+        // Find customer name
+        let customerName = "Unknown Customer";
+
+        for (let customer of customers) {
+            if (customer.customerId === booking.customerId) {
+                customerName = customer.fullName;
+            }
+        }
+
+        // Create a new table row
+        let row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${booking.bookingId}</td>
+            <td>${customerName}</td>
+            <td>${booking.roomNumber}</td>
+            <td>${booking.checkIn}</td>
+            <td>${booking.checkOut}</td>
+            <td>${booking.nights}</td>
+            <td>KSh ${Number(booking.totalCost).toLocaleString("en-KE")}</td>
+            <td><span class="status ${booking.status.toLowerCase()}">${booking.status}</span></td>
+            <td><button class="delete-btn">Delete</button></td>
+        `;
+
+        // Get the delete button
+        let deleteButton = row.querySelector("button");
+
+        // Delete booking when clicked
+        deleteButton.addEventListener("click", function() {
+            deleteBooking(booking.bookingId);
+        });
+        bookingList.appendChild(row);
+    }
+}
