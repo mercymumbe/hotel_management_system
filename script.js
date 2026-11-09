@@ -596,8 +596,9 @@ function displayCustomers() {
             });
             // Save updated customers
             localStorage.setItem("customers", JSON.stringify(customers));
-
-           
+            displayCustomers();
         });
+        customerList.appendChild(row);
     });
+    totalCustomers.textContent = customers.length;
 }
