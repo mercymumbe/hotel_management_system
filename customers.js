@@ -66,10 +66,10 @@ customerForm.addEventListener("submit", function(event) {
     let name = customerName.value.trim();
     let phone = customerPhone.value.trim();
     let email = customerEmail.value.trim();
-    
+
    // Create a customer object
     let customer = {
-        id: "CUST" + Date.now(),
+        id: "C00" + (customers.length + 1),
         name: name,
         phone: phone,
         email: email
