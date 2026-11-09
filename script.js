@@ -266,3 +266,9 @@ const totalBookings = document.getElementById("totalBookings");
 const confirmedBookings = document.getElementById("confirmedBookings");
 const pendingBookings = document.getElementById("pendingBookings");
 const cancelledBookings = document.getElementById("cancelledBookings");
+
+// room form selection section
+const bookingForm = document.getElementById("bookingForm")
+
+const customerSelect = document.getElementById("customerSelect");
+const roomSelect = document.getElementById("roomSelect");
