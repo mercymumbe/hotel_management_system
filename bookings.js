@@ -251,13 +251,14 @@ bookingForm.addEventListener("submit", function(event) {
         return;
     }
 
+
     // Get the room price
     let price = 0;
 
-    for (let i = 0; i < rooms.length; i++) {
+    for (let room of rooms) {
 
-        if (rooms[i].roomNumber === roomNumber) {
-            price = Number(rooms[i].price);
+        if (String(room.roomNumber) === roomNumber) {
+            price = Number(room.price);
         }
     }
 
@@ -265,7 +266,7 @@ bookingForm.addEventListener("submit", function(event) {
     let cost = nights * price;
 
     // Create a new booking
-    let newBooking = {
+     let newBooking = {
         bookingId: generateBookingId(),
         customerId: customerId,
         roomNumber: roomNumber,
