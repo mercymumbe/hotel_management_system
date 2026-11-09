@@ -602,3 +602,34 @@ function displayCustomers() {
     });
     totalCustomers.textContent = customers.length;
 }
+
+customerForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    // Get information entered by the customer
+    let name = customerName.value;
+    let phone = customerPhone.value;
+    let email = customerEmail.value;
+
+    // Create a customer
+    let customer = {
+        id: customers.length + 1,
+        name: name,
+        phone: phone,
+        email: email
+    };
+
+    // Add customer to the list
+    customers.push(customer);
+
+    // Save customers
+    localStorage.setItem("customers", JSON.stringify(customers));
+
+    // Show customers in the table
+    displayCustomers();
+
+    // Clear the form
+    customerForm.reset();
+
+});
