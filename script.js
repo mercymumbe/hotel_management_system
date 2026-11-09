@@ -464,3 +464,12 @@ function displayBookings(records) {
         bookingList.appendChild(row);
     }
 }
+
+// save the booking
+bookingForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    
+});
+
