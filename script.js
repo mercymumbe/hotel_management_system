@@ -385,3 +385,34 @@ function generateBookingId() {
 
     return "BK" + bookingNumber;
 }
+
+// display booking statistics
+
+function displayStatistics() {
+
+    let confirmed = 0;
+    let pending = 0;
+    let cancelled = 0;
+
+    for (let i = 0; i < bookings.length; i++) {
+
+        if (bookings[i].status === "Confirmed") {
+            confirmed++;
+        }
+
+        if (bookings[i].status === "Pending") {
+            pending++;
+        }
+
+        if (bookings[i].status === "Cancelled") {
+            cancelled++;
+        }
+    }
+
+    totalBookings.textContent = bookings.length;
+    confirmedBookings.textContent = confirmed;
+    pendingBookings.textContent = pending;
+    cancelledBookings.textContent = cancelled;
+}
+
+
