@@ -479,6 +479,37 @@ bookingForm.addEventListener("submit", function(event) {
 
     let nights = calculateNights();
 
-   
+    // Check if customer and room are selected
+    if (customerId === "" || roomNumber === "") {
+        alert("Please select a customer and a room.");
+        return;
+    }
+
+    // Check the dates
+    if (nights <= 0) {
+        alert("Check-out date must be after check-in date.");
+        return;
+    }
+
+    // Check if the room is already booked
+    if (!checkRoomAvailability(roomNumber, startDate, endDate)) {
+        alert("This room is already booked for these dates.");
+        return;
+    }
+
+    // Get the room price
+    let price = 0;
+
+    for (let i = 0; i < rooms.length; i++) {
+
+        if (rooms[i].roomNumber === roomNumber) {
+            price = Number(rooms[i].price);
+        }
+    }
+
+    // Calculate total cost
+    let cost = nights * price;
+
+    
 });
 
