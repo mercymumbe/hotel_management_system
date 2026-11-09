@@ -258,4 +258,5 @@ function loadRooms() {
 loadRooms();
 
 
+// bookings page javascript
 
