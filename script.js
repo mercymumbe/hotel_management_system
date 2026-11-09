@@ -470,6 +470,15 @@ bookingForm.addEventListener("submit", function(event) {
 
     event.preventDefault();
 
-    
+    // Get values from the form
+    let customerId = customerSelect.value;
+    let roomNumber = roomSelect.value;
+    let startDate = checkIn.value;
+    let endDate = checkOut.value;
+    let status = bookingStatus.value;
+
+    let nights = calculateNights();
+
+   
 });
 
