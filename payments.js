@@ -350,3 +350,9 @@ function deletePayment(paymentId) {
     displayStatistics();
     displayBookings();
 }
+
+// display saved records when the page opens
+
+displayBookings();
+displayPayments();
+displayStatistics();
