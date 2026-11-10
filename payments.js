@@ -15,3 +15,7 @@ const bookingAmount = document.getElementById("bookingAmount");
 const amountPaid = document.getElementById("amountPaid");
 const paymentMethod = document.getElementById("paymentMethod");
 const paymentStatus = document.getElementById("paymentStatus");
+
+// Payment records
+const paymentList = document.getElementById("paymentList");
+const paymentSearch = document.getElementById("paymentSearch");
