@@ -127,7 +127,7 @@ function displayBookingDetails() {
     amountPaid.placeholder = "Maximum: KSh " +
         balance.toLocaleString("en-KE");
 }
- // Update booking details when selection changes
+// Update booking details when selection changes
 bookingSelect.addEventListener("change", displayBookingDetails);
 
 //  payment ID
@@ -149,6 +149,37 @@ function generatePaymentId() {
 
     return "PMT" + String(highestNumber + 1).padStart(3, "0");
 }
+ 
+// payment statistics
+function displayStatistics() {
 
+    let completed = 0;
+    let pending = 0;
+    let received = 0;
 
+    for (let payment of payments) {
+
+        if (payment.status === "Completed") {
+
+            completed++;
+            received += Number(payment.amount);
+
+        }
+
+        else if (payment.status === "Pending") {
+
+            pending++;
+
+        }
+    }
+
+    totalPayments.textContent = payments.length;
+
+    completedPayments.textContent = completed;
+
+    pendingPayments.textContent = pending;
+
+    totalAmount.textContent =
+        "KSh " + received.toLocaleString("en-KE");
+}
 
