@@ -65,5 +65,8 @@ registerForm.addEventListener("submit", function(event) {
         email: email,
         password: password
     };
+     // Save account in browser
+    localStorage.setItem("admin", JSON.stringify(admin));
+
 })
 
