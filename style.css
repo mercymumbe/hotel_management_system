@@ -372,3 +372,6 @@ td {
     border: solid, black;
     color: rgb(4, 4, 87);
 }
+.hotel-name{
+    text-align: center;
+}
