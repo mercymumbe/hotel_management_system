@@ -101,8 +101,6 @@ loginForm.addEventListener("submit", function(event) {
     // Check login details
     if (email === admin.email && password === admin.password) {
 
-        alert("Login successful!");
-
         // Save login information
         sessionStorage.setItem("loggedIn", "true");
         sessionStorage.setItem("adminName", admin.name);
