@@ -66,6 +66,27 @@ row.querySelector(".edit-btn").addEventListener("click", function() {
     totalCustomers.textContent = customers.length;
 }
 
+// Edit customer function
+function editCustomer(customerId) {
+
+    // Find the customer
+    let customer = customers.find(function(item) {
+        return item.id === customerId;
+    });
+
+    if (!customer) {
+        return;
+    }
+
+    // Store the customer ID
+    editingCustomerId = customerId;
+
+    // Fill the form with customer details
+    customerName.value = customer.name;
+    customerPhone.value = customer.phone;
+    customerEmail.value = customer.email;
+
+}
 
 customerForm.addEventListener("submit", function(event) {
 
