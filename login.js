@@ -87,5 +87,8 @@ loginForm.addEventListener("submit", function(event) {
     let email = document.getElementById("loginEmail").value;
     let password = document.getElementById("loginPassword").value;
 
-   
+    // Get saved user
+    let admin = JSON.parse(localStorage.getItem("admin"));
+
+    
 });
