@@ -45,13 +45,13 @@ function displayStatistics() {
     // Check every room
     for (let i = 0; i < rooms.length; i++) {
 
-        if (rooms[i].status === "available") {
+        if (rooms[i].status === "Available") {
             available++;
         }
-        else if (rooms[i].status === "booked") {
+        else if (rooms[i].status === "Booked") {
             booked++;
         }
-        else if (rooms[i].status === "occupied") {
+        else if (rooms[i].status === "Occupied") {
             occupied++;
         }
     }
@@ -69,6 +69,7 @@ function displayStatistics() {
 function displayRooms(roomRecords = rooms) {
 
     roomList.innerHTML = "";
+
 
     // Check if there are no rooms
     if (roomRecords.length === 0) {
@@ -97,38 +98,38 @@ function displayRooms(roomRecords = rooms) {
         let priceCell = document.createElement("td");
         let statusCell = document.createElement("td");
 
+        // Display room details
         numberCell.textContent = room.roomNumber;
         typeCell.textContent = room.roomType;
 
         priceCell.textContent = "KSh " +
             Number(room.price).toLocaleString("en-KE");
 
-
-    }
+    
     // Create status label
-    let statusLabel = document.createElement("span");
+     let statusLabel = document.createElement("span");
 
-    statusLabel.textContent =
-        room.status.charAt(0).toUpperCase() +
-        room.status.slice(1);
+        statusLabel.textContent =
+            room.status.charAt(0).toUpperCase() +
+            room.status.slice(1);
 
-    statusLabel.classList.add("status");
-    statusLabel.classList.add(room.status);
+        statusLabel.classList.add("status");
+        statusLabel.classList.add(room.status);
 
-    statusCell.appendChild(statusLabel);
+        statusCell.appendChild(statusLabel);
 
     // Add cells to the row
-    row.append(
-        numberCell,
-        typeCell,
-        priceCell,
-        statusCell
-    );
+     row.append(
+            numberCell,
+            typeCell,
+            priceCell,
+            statusCell
+        );
 
     // Add row to the table
     roomList.appendChild(row);
+    }
 }
-
 
 
 
