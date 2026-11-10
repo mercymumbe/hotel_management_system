@@ -4,7 +4,7 @@
   "description": "",
   "main": "bookings.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test":"jest"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/mercymumbe/hotel_management_system/issues"
   },
-  "homepage": "https://github.com/mercymumbe/hotel_management_system#readme"
+  "homepage": "https://github.com/mercymumbe/hotel_management_system#readme",
+  "devDependencies": {
+    "jest": "^30.5.2",
+    "jest-environment-jsdom": "jsdom"
+  }
 }
