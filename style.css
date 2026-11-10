@@ -372,9 +372,10 @@ td {
     border: solid, black;
     color: rgb(4, 4, 87);
 }
-.hotel-name{
-    text-align: center;
-}
+
 .login-container{
     display: flex;
+}
+.hero-image{
+    width: 100%;
 }
