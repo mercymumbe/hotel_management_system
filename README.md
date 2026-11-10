@@ -1,26 +1,20 @@
+
 # Blue Pearl Hotel Management System
+
 **link**:https://mercymumbe.github.io/hotel_management_system/
 
-## 1. Project Overview
+## Project overview
+This is a system designed to help hotel admnistratorsmanage daily operation systems.it provides easy way to manage hotel rooms customers, bookings and payments across the hotel
 
-Blue Pearl Hotel Management System is a web-based application designed to help hotel administrators manage daily hotel operations efficiently.
+## Objectives
+- Provide an organised dashboard
+- Simplfy Hotel Management operations
+- Manage Hotel room records
+- Register new customer and manage customer informations
+- Record and manage hotel bookings
+- Track payments.
 
-The system provides an easy way to manage hotel rooms, customers, bookings and payments through a simple and user-friendly interface.
-
-## 2. Project Objectives
-
-The main objectives of this project are:
-
-- To simplify hotel management operations.
-- To manage hotel room records.
-- To register and manage customer information.
-- To record and manage hotel bookings.
-- To track customer payments.
-- To provide an organized dashboard for administrators.
-
-## 3. System Features
-
-The system includes the following features:
+## Features
 
 ### Admin Login and Registration
 - Allows administrators to create an account.
