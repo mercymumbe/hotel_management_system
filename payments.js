@@ -183,3 +183,51 @@ function displayStatistics() {
         "KSh " + received.toLocaleString("en-KE");
 }
 
+// payment record section
+function displayPayments(records = payments) {
+
+    paymentList.innerHTML = "";
+
+    if (records.length === 0) {
+
+        paymentList.innerHTML =
+            "<tr><td colspan='8'>No payments found</td></tr>";
+
+        return;
+    }
+
+    for (let payment of records) {
+
+        let name = getCustomerName(payment.customerId);
+
+        let row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${payment.paymentId}</td>
+            <td>${payment.bookingId}</td>
+            <td>${name}</td>
+            <td>KSh ${Number(payment.amount).toLocaleString("en-KE")}</td>
+            <td>${payment.method}</td>
+            <td>${payment.date}</td>
+            <td>
+                <span class="status ${payment.status.toLowerCase()}">
+                    ${payment.status}
+                </span>
+            </td>
+            <td>
+                <button class="delete-btn">Delete</button>
+            </td>
+        `;
+
+        let deleteButton = row.querySelector("button");
+
+        deleteButton.addEventListener("click", function() {
+
+            deletePayment(payment.paymentId);
+
+        });
+
+        paymentList.appendChild(row);
+    }
+}
+
