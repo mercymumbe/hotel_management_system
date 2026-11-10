@@ -28,4 +28,10 @@ let customers = JSON.parse(localStorage.getItem("customers")) || [];
 
 let payments = JSON.parse(localStorage.getItem("payments")) || [];
 
+//  Save payments
+function savePayments() {
+
+    localStorage.setItem("payments", JSON.stringify(payments));
+
+}
 
