@@ -280,3 +280,35 @@ thead, th{
     border-radius: 8px;
     box-shadow: 0 2px 8px rgb(13, 13, 13);
  }
+ .totalpayments-card{
+    background-color: rgb(4,4,87);
+    color: rgb(218, 216, 218);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(13, 13, 13);
+ }
+ .completepayments-card{
+    background-color: green;
+    color: greenyellow;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(13, 13, 13);
+ }
+ .pendingpayments-card{
+   background-color: rgb(172, 212, 9);
+    color: rgb(163, 171, 89);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(13, 13, 13); 
+ }
+ .received-card{
+     background-color: rgb(86, 173, 86);
+    color: greenyellow;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(13, 13, 13);
+ }
