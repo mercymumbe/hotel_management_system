@@ -312,3 +312,20 @@ paymentForm.addEventListener("submit", function(event) {
     
 });
 
+Search payments
+
+paymentSearch.addEventListener("input", function() {
+
+    let search = paymentSearch.value.toLowerCase();
+
+    let results = payments.filter(function(payment) {
+
+        let name = getCustomerName(payment.customerId);
+
+        return payment.paymentId.toLowerCase().includes(search) ||
+               payment.bookingId.toLowerCase().includes(search) ||
+               name.toLowerCase().includes(search);
+    });
+
+    displayPayments(results);
+});
