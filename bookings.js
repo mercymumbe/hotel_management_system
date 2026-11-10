@@ -417,18 +417,20 @@ bookingForm.addEventListener("submit", function (event) {
         // Update existing booking
         for (let booking of bookings) {
 
-            if (booking.bookingId === editingBookingId) {
-                customerId: customerId,
-                    roomNumber: roomNumber,
-                        checkIn: startDate,
-                            checkOut: endDate,
-                                nights: nights,
-                                    totalCost: cost,
-                                        status: status
+           if (booking.bookingId === editingBookingId) {
 
-                break;
+    booking.customerId = customerId;
+    booking.roomNumber = roomNumber;
+    booking.checkIn = startDate;
+    booking.checkOut = endDate;
+    booking.nights = nights;
+    booking.totalCost = cost;
+    booking.status = status;
+
+    break;
+}
             }
-        }
+        
         editingBookingId = null;
 
         alert("Booking updated successfully!");
