@@ -290,6 +290,25 @@ paymentForm.addEventListener("submit", function(event) {
         date: today,
         status: status
     };
+// Save payment
 
+    payments.push(newPayment);
+
+    savePayments();
+
+    // Update the page
+
+    displayPayments();
+    displayStatistics();
+    displayBookings();
+
+    paymentForm.reset();
+
+    customerName.value = "";
+    bookingAmount.value = "";
+    amountPaid.max = "";
+
+    alert("Payment recorded successfully!");
     
 });
+
