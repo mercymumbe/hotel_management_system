@@ -64,5 +64,31 @@ function getCustomerName(customerId) {
 
     return "Unknown Customer";
 }
+// booking function
+function displayBookings() {
+
+    bookingSelect.innerHTML =
+        '<option value="">Choose booking</option>';
+
+    for (let booking of bookings) {
+
+        let paid = getAmountPaid(booking.bookingId);
+
+        let balance = Number(booking.totalCost) - paid;
+
+        if (balance > 0) {
+
+            let option = document.createElement("option");
+
+            option.value = booking.bookingId;
+
+            option.textContent =
+                booking.bookingId + " - " +
+                getCustomerName(booking.customerId);
+
+            bookingSelect.appendChild(option);
+        }
+    }
+}
 
 
