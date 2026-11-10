@@ -36,6 +36,13 @@ function displayCustomers() {
             <button class="delete-btn">Delete</button>
             </td>
         `;
+
+        // Edit customer function
+row.querySelector(".edit-btn").addEventListener("click", function() {
+
+    editCustomer(customer.id);
+
+});
         // Delete customer
         row.querySelector(".delete-btn").addEventListener("click", function() {
 
@@ -58,6 +65,7 @@ function displayCustomers() {
     // Update total customers
     totalCustomers.textContent = customers.length;
 }
+
 
 customerForm.addEventListener("submit", function(event) {
 
