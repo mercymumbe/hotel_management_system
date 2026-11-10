@@ -39,6 +39,10 @@ function saveBookings() {
     localStorage.setItem("bookings", JSON.stringify(bookings));
 }
 
+// Store the ID of the booking being edited
+let editingBookingId = null;
+
+
 // display customers
 function displayCustomers() {
 
@@ -251,7 +255,9 @@ function displayBookings(records = bookings) {
                     ${booking.status}
                 </span>
             </td>
-            <td><button class="delete-btn">Delete</button></td>
+            <td>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button></td>
         `;
 
         // Get the delete button
@@ -367,6 +373,7 @@ bookingForm.addEventListener("submit", function(event) {
 
     alert("Booking saved successfully!");
 });
+
 
 // deleting booking records
 function deleteBooking(bookingId) {
