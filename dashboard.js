@@ -29,3 +29,11 @@ for (let i = 0; i < rooms.length; i++) {
 
 availableRooms.textContent = available;
 
+
+// display for bookings
+totalBookings.textContent = bookings.length;
+
+recentBookingList.innerHTML = "";
+
+
+
