@@ -282,6 +282,62 @@ function displayBookings(records = bookings) {
         bookingList.appendChild(row);
     }
 }
+// Edit booking records
+function editBooking(bookingId) {
+
+    let booking = bookings.find(function(item) {
+
+        return item.bookingId === bookingId;
+
+    });
+
+    if (!booking) {
+        alert("Booking not found.");
+        return;
+    }
+    // Store the booking ID being edited
+    editingBookingId = bookingId;
+
+    // Fill the form with existing booking details
+    customerSelect.value = booking.customerId;
+
+    // Add the booked room to the options if it is not already available
+    let roomExists = false;
+
+    for (let option of roomSelect.options) {
+
+        if (String(option.value) === String(booking.roomNumber)) {
+            roomExists = true;
+            break;
+        }
+    }
+
+    if (!roomExists) {
+
+        let option = document.createElement("option");
+
+        option.value = booking.roomNumber;
+        option.textContent = booking.roomNumber + " - Currently booked";
+
+        roomSelect.appendChild(option);
+    }
+
+    roomSelect.value = booking.roomNumber;
+
+    checkIn.value = booking.checkIn;
+    checkOut.value = booking.checkOut;
+
+    bookingStatus.value = booking.status;
+
+    calculateTotalCost();
+
+    // Change the page to the form
+    bookingForm.scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
 
     // Get values from the form
     let customerId = customerSelect.value;
