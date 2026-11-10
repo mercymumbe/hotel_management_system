@@ -138,7 +138,10 @@ function checkRoomAvailability(roomNumber, startDate, endDate) {
 
     for (let booking of bookings) {
 
-    
+    // Ignore the booking currently being edited
+        if (booking.bookingId === editingBookingId) {
+            continue;
+        }
         if (
             String(booking.roomNumber) === String(roomNumber) &&
             String(booking.status).toLowerCase() !== "cancelled"
@@ -259,6 +262,15 @@ function displayBookings(records = bookings) {
             <button class="delete-btn">Delete</button></td>
         `;
 
+        // Edit button
+        let editButton = document.createElement("button");
+
+    }
+}
+
+        editButton.addEventListener("click", function() {
+            editBooking(booking.bookingId);
+
         // Get the delete button
         let deleteButton = row.querySelector("button");
 
@@ -269,10 +281,6 @@ function displayBookings(records = bookings) {
 
         });
         bookingList.appendChild(row);
-}
-}
-// save the booking
-bookingForm.addEventListener("submit", function(event) {
 
     event.preventDefault();
 
