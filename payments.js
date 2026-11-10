@@ -279,5 +279,17 @@ paymentForm.addEventListener("submit", function(event) {
     }
     let today = new Date().toISOString().split("T")[0];
 
+    // Create payment
+
+    let newPayment = {
+        paymentId: generatePaymentId(),
+        bookingId: bookingId,
+        customerId: selectedBooking.customerId,
+        amount: amount,
+        method: method,
+        date: today,
+        status: status
+    };
+
     
 });
