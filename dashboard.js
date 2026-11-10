@@ -44,6 +44,8 @@ function displayStatistics() {
     bookedRooms.textContent = booked;
     occupiedRooms.textContent = occupied;
 }
+// rooms statistics
+displayStatistics();
 
 
 // display customers
