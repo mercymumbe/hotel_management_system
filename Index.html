@@ -11,48 +11,34 @@
 </head>
 
 <body>
-    <!-- header section -->
-    <header>
-        <div class="heros-image">
-            <img src="images/hotel_view.jpg" alt="Hotel_images">
-        </div>
-    </header>
+    <!-- Main login container -->
+    <div class="login-container">
 
-    <!-- login form section -->
-    <main>
-        <div class="login-container">
-            <div class="heading">
-                <h1>Blue Pearl Hotel</h1>
-                <h2>welcome Back!</h2>
-                <p>sign in to access hotel management system</p>
+        <!-- LEFT SECTION: Hotel image and information -->
+        <div class="hotel-section">
+
+            <!-- Hotel name -->
+            <div class="hotel-name">
+                <h1> Blue Pearl Hotel</h1>
+            </div>
+
+            <!-- Hotel background image -->
+            <div class="hotel-image">
+
+                <img src="images/hotel_view.jpg" alt="Blue Pearl Hotel Building">
 
             </div>
-            <form id="loginForm">
 
-                <label for="email">Email Address</label>
-                <input type="email" id="email" placeholder="Enter your email" required>
-                <br>
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter your password" required>
+            <!-- Welcome message -->
+            <div class="hotel-description">
 
-                <div class="login-options">
-
-                    <label>
-                        <input type="checkbox" id="rememberMe">Remember me</label>
-
-                    <a href="#">Forgot Password?</a>
-
-                </div>
-                <br>
-                <button type="submit" id="signInBtn">Sign In</button>
-
-                <p id="errorMessage"></p>
-
-            </form>
-
+                <p> Welcome to Blue Pearl Hotel Where Comfort Meets Excellence.</p>
+            </div>
 
         </div>
-    </main>
+
+
+       
     <script src="login.js"></script>
 </body>
 
