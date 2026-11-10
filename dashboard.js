@@ -11,3 +11,6 @@ let rooms = JSON.parse(localStorage.getItem("rooms")) || [];
 // get saved customers records from localstorage
 let customers = JSON.parse(localStorage.getItem("customers")) || [];
 
+// get saved bookings records from localStorage
+let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
