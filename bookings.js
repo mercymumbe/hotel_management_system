@@ -263,13 +263,12 @@ function displayBookings(records = bookings) {
         `;
 
         // Edit button
-        let editButton = document.createElement("button");
-
-    }
-}
+         let editButton = row.querySelector(".edit-btn");
+    
 
         editButton.addEventListener("click", function() {
             editBooking(booking.bookingId);
+        });
 
         // Get the delete button
         let deleteButton = row.querySelector("button");
@@ -281,8 +280,8 @@ function displayBookings(records = bookings) {
 
         });
         bookingList.appendChild(row);
-
-    event.preventDefault();
+    }
+}
 
     // Get values from the form
     let customerId = customerSelect.value;
