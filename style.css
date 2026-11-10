@@ -375,3 +375,6 @@ td {
 .hotel-name{
     text-align: center;
 }
+.login-container{
+    display: flex;
+}
