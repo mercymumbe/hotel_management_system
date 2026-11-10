@@ -67,7 +67,7 @@ registerForm.addEventListener("submit", function(event) {
     };
      // Save account in browser
     localStorage.setItem("admin", JSON.stringify(admin));
-    
+
     // Clear registration form
     registerForm.reset();
 
@@ -78,3 +78,14 @@ registerForm.addEventListener("submit", function(event) {
 
 })
 
+// login section
+loginForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    // Get login details
+    let email = document.getElementById("loginEmail").value;
+    let password = document.getElementById("loginPassword").value;
+
+   
+});
