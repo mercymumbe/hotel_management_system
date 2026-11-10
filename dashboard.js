@@ -35,5 +35,27 @@ totalBookings.textContent = bookings.length;
 
 recentBookingList.innerHTML = "";
 
+// show new bokings
+let recentBookings = bookings.slice(0).reverse();
 
+for (let i = 0; i < recentBookings.length; i++) {
 
+    let booking = recentBookings[i];
+
+    // Create a table row
+    let row = document.createElement("tr");
+
+    // Add booking details
+    row.innerHTML = `
+        <td>${booking.id}</td>
+        <td>${booking.customerName}</td>
+        <td>${booking.roomNumber}</td>
+        <td>${booking.checkIn}</td>
+        <td>${booking.checkOut}</td>
+        <td>${booking.status}</td>
+    `;
+
+    // Add row to the table
+    recentBookingList.appendChild(row);
+
+}
