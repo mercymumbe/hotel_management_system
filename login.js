@@ -11,3 +11,13 @@ let registerSection = document.getElementById("registerFormSection");
 // Get the links
 let showRegister = document.getElementById("showRegister");
 let showLogin = document.getElementById("showLogin");
+
+// registration form section
+showRegister.addEventListener("click", function(event) {
+
+    event.preventDefault();
+
+    loginSection.style.display = "none";
+    registerSection.hidden = false;
+
+});
