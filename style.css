@@ -69,14 +69,15 @@ body {
 }
 
 button{
+    border: none;
     background-color:rgb(4,4,87); 
     color: white;
-    border-radius: 5px;
+    border-radius:3px;
 }
 /* room form section */
 .room-form{
     background-color: white;
-    padding: 25px;
+    padding: 10px;
     margin: 10px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgb(38, 139, 216);
@@ -222,4 +223,14 @@ thead, th{
     background-color: white;
     border: solid, black;
     color:rgb(4,4,87);
+  }
+  /* table section */
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+
+  }
+  td {
+    padding: 12px 12px;
   }
