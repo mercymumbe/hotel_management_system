@@ -32,6 +32,7 @@ function displayCustomers() {
             <td>${customer.phone}</td>
             <td>${customer.email}</td>
             <td>
+            <button class="edit-btn">Edit</button>
             <button class="delete-btn">Delete</button>
             </td>
         `;
