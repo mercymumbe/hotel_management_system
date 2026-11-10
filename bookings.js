@@ -53,7 +53,9 @@ function displayCustomers() {
 
         customerSelect.appendChild(option);
     }
+
 }
+
 // display for rooms
 
 function displayRooms() {
@@ -62,7 +64,7 @@ function displayRooms() {
 
     for (let i = 0; i < rooms.length; i++) {
 
-        if (rooms[i].status.toLowerCase() === "available") {
+        if (String(rooms[i].status).toLowerCase() === "available") {
 
             let option = document.createElement("option");
 
@@ -71,20 +73,22 @@ function displayRooms() {
             option.textContent =
                 rooms[i].roomNumber + " - " +
                 rooms[i].roomType + " - KSh " +
-                rooms[i].price;
+                Number(rooms[i].price).toLocaleString("en-KE");
 
             roomSelect.appendChild(option);
         }
     }
-}
 
+}
 
 // calculate number of nights
 
 function calculateNights() {
+
     if (checkIn.value === "" || checkOut.value === "") {
         return 0;
     }
+
     let start = new Date(checkIn.value);
     let end = new Date(checkOut.value);
 
@@ -93,18 +97,24 @@ function calculateNights() {
     return nights;
 }
 
+
 // calculate total cost
 function calculateTotalCost() {
 
     let nights = calculateNights();
     let price = 0;
 
+
     // Get the selected room price
-    for (let room of rooms) {
-         if (String(room.roomNumber) === roomSelect.value) {
-            price = Number(room.price);
+        for (let i = 0; i < rooms.length; i++) {
+
+        if (String(rooms[i].roomNumber) === roomSelect.value) {
+
+            price = Number(rooms[i].price);
+            break;
         }
     }
+
 
     // Check if dates and room price are valid
     if (nights <= 0 || price <= 0) {
@@ -125,13 +135,16 @@ function checkRoomAvailability(roomNumber, startDate, endDate) {
 
     for (let booking of bookings) {
 
-        if (String(booking.roomNumber) === String(roomNumber) &&
-            booking.status !== "Cancelled") {
+    
+        if (
+            String(booking.roomNumber) === String(roomNumber) &&
+            String(booking.status).toLowerCase() !== "cancelled"
+        ) {
 
+            // Check whether the dates overlap
             if (startDate < booking.checkOut && endDate > booking.checkIn) {
 
                 return false;
-
             }
         }
     }
@@ -139,13 +152,29 @@ function checkRoomAvailability(roomNumber, startDate, endDate) {
     return true;
 }
 
+
 // booking ID
 function generateBookingId() {
 
-    let bookingNumber = bookings.length + 1;
+    let highestNumber = 0;
 
-    return "BK" + bookingNumber;
+    for (let booking of bookings) {
+
+        let number = parseInt(
+            String(booking.bookingId).replace("BK", ""),
+            10
+        );
+
+        if (!isNaN(number) && number > highestNumber) {
+            highestNumber = number;
+        }
+    }
+
+    let nextNumber = highestNumber + 1;
+
+    return "BK" + String(nextNumber).padStart(3, "0");
 }
+
 
 // display booking statistics
 
