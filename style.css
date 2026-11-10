@@ -153,6 +153,7 @@ thead, th{
     margin: 200px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgb(38, 139, 216);
+    margin-top: 10px;
 }
 .heading{
     text-align: center;
