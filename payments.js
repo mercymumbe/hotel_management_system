@@ -127,6 +127,8 @@ function displayBookingDetails() {
     amountPaid.placeholder = "Maximum: KSh " +
         balance.toLocaleString("en-KE");
 }
+ // Update booking details when selection changes
+bookingSelect.addEventListener("change", displayBookingDetails);
 
 
 
