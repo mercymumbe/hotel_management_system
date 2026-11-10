@@ -147,3 +147,11 @@ thead, th{
 .heros-image{
     width: 100%;
 }
+.login-container{
+    background-color: white;
+    padding: 30px;
+    margin: 200px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(38, 139, 216);
+}
+.login-container
