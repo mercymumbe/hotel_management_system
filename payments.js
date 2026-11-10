@@ -19,3 +19,13 @@ const paymentStatus = document.getElementById("paymentStatus");
 // Payment records
 const paymentList = document.getElementById("paymentList");
 const paymentSearch = document.getElementById("paymentSearch");
+
+// saved records from localStorage
+
+let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+let customers = JSON.parse(localStorage.getItem("customers")) || [];
+
+let payments = JSON.parse(localStorage.getItem("payments")) || [];
+
+
