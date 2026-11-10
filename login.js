@@ -31,3 +31,33 @@ showLogin.addEventListener("click", function(event) {
     loginSection.style.display = "block";
 
 });
+
+// create an account section
+registerForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+// Get registration details
+    let name = document.getElementById("fullName").value.trim();
+    let email = document.getElementById("registerEmail").value.trim();
+    let password = document.getElementById("registerPassword").value;
+    let confirmPassword = document.getElementById("confirmPassword").value;
+
+    // Check if passwords match
+    if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return;
+    }
+
+    // Check if account already exists
+    let savedUser = localStorage.getItem("admin");
+
+    if (savedUser !== null) {
+        let user = JSON.parse(savedUser);
+
+        if (user.email === email) {
+            alert("This email already has an account!");
+            return;
+        }
+    }
+})
+
