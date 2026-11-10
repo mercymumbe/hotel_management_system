@@ -130,5 +130,25 @@ function displayBookingDetails() {
  // Update booking details when selection changes
 bookingSelect.addEventListener("change", displayBookingDetails);
 
+//  payment ID
+function generatePaymentId() {
+
+    let highestNumber = 0;
+
+    for (let payment of payments) {
+
+        let number = parseInt(
+            String(payment.paymentId).replace("PMT", ""),
+            10
+        );
+
+        if (!isNaN(number) && number > highestNumber) {
+            highestNumber = number;
+        }
+    }
+
+    return "PMT" + String(highestNumber + 1).padStart(3, "0");
+}
+
 
 
