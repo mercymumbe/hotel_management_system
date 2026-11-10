@@ -52,22 +52,22 @@
         <!-- Booking Statistics -->
         <section class="Statistics-card">
 
-            <div class="card">
+            <div class="booking-card">
                 <h3>Total Bookings</h3>
                 <p id="totalBookings">0</p>
             </div>
 
-            <div class="card">
+            <div class="confirmed-card">
                 <h3>Confirmed</h3>
                 <p id="confirmedBookings">0</p>
             </div>
 
-            <div class="card">
+            <div class="Pending-card">
                 <h3>Pending</h3>
                 <p id="pendingBookings">0</p>
             </div>
 
-            <div class="card">
+            <div class="Cancelled-card">
                 <h3>Cancelled</h3>
                 <p id="cancelledBookings">0</p>
             </div>
@@ -116,9 +116,9 @@
                 <div class="form-group">
                     <label for="bookingStatus">Booking Status:</label>
                     <select id="bookingStatus" required>
-                        <option value="Confirmed">Confirmed</option>
-                        <option value="Pending">Pending</option>
-                        <option value="Cancelled">Cancelled</option>
+                        <option value="Confirmed" class="confirmed">Confirmed</option>
+                        <option value="Pending" class="pending">Pending</option>
+                        <option value="Cancelled" class="cancelled">Cancelled</option>
                     </select>
                 </div>
                 <br>
@@ -127,7 +127,7 @@
                 <div class="form-group">
                     <label for="totalCost">Total Booking Cost (KSh):</label>
                     <br>
-                    <input type="text" id="totalCost" placeholder="Calculated automatically" readonly>
+                    <input type="text" id="totalCost" placeholder="Calculated automatically" >
                 </div>
 
                 <br>
