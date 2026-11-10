@@ -78,6 +78,9 @@ customerForm.addEventListener("submit", function(event) {
     // Add customer to the array
     customers.push(customer);
 
+    // Store the ID of the customer being edited
+let editingCustomerId = null;
+
     // Save customers in localStorage
     localStorage.setItem("customers", JSON.stringify(customers));
 
