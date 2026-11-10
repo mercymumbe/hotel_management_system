@@ -272,4 +272,11 @@ thead, th{
     border-radius: 8px;
     box-shadow: 0 2px 8px rgb(13, 13, 13);
  }
- 
+ .customer-card{
+    background-color: rgb(4,4,87);
+    color: rgb(218, 216, 218);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(13, 13, 13);
+ }
