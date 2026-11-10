@@ -51,5 +51,18 @@ function getAmountPaid(bookingId) {
 
     return paid;
 }
+// find customers name function.
+function getCustomerName(customerId) {
+
+    for (let customer of customers) {
+
+        if (String(customer.id) === String(customerId)) {
+
+            return customer.name;
+        }
+    }
+
+    return "Unknown Customer";
+}
 
 
