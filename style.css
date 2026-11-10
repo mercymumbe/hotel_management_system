@@ -240,3 +240,28 @@ thead, th{
     border: solid, black;
     color:rgb(4,4,87);
   }
+  .booking-card{
+    background-color: rgb(100, 14, 161);
+    color: rgb(219, 145, 237);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(13, 13, 13);
+  }
+  .confirmed-card{
+    background-color: green;
+    color: greenyellow;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(13, 13, 13);
+  }
+  .Pending-card{
+     background-color: rgb(172, 212, 9);
+    color: rgb(163, 171, 89);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(13, 13, 13);
+  }
+  
