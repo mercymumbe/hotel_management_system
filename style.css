@@ -158,3 +158,6 @@ thead, th{
     text-align: center;
     padding: 0;
 }
+.heading h1{
+    color:rgb(4,4,87); 
+}
