@@ -329,3 +329,24 @@ paymentSearch.addEventListener("input", function() {
 
     displayPayments(results);
 });
+
+// delete payment section
+
+function deletePayment(paymentId) {
+
+    let answer = confirm("Are you sure you want to delete this payment?");
+
+    if (answer === false) {
+        return;
+    }
+
+    payments = payments.filter(function(payment) {
+        return payment.paymentId !== paymentId;
+    });
+
+    savePayments();
+
+    displayPayments();
+    displayStatistics();
+    displayBookings();
+}
