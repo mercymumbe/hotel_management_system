@@ -21,3 +21,13 @@ showRegister.addEventListener("click", function(event) {
     registerSection.hidden = false;
 
 });
+
+// login form
+showLogin.addEventListener("click", function(event) {
+
+    event.preventDefault();
+
+    registerSection.hidden = true;
+    loginSection.style.display = "block";
+
+});
