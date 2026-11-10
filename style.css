@@ -175,8 +175,8 @@ th {
 
 .login-card {
     background-color: white;
-    padding: 25px;
-    margin: 100px;
+    padding: 30px;
+    margin: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgb(38, 139, 216);
 }
@@ -373,9 +373,4 @@ td {
     color: rgb(4, 4, 87);
 }
 
-.login-container{
-    display: flex;
-}
-.hero-image{
-    width: 100%;
-}
+
