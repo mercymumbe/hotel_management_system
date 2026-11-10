@@ -312,7 +312,7 @@ paymentForm.addEventListener("submit", function(event) {
     
 });
 
-Search payments
+// Search payments
 
 paymentSearch.addEventListener("input", function() {
 
