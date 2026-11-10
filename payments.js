@@ -34,4 +34,22 @@ function savePayments() {
     localStorage.setItem("payments", JSON.stringify(payments));
 
 }
+// calculation function
+function getAmountPaid(bookingId) {
+
+    let paid = 0;
+
+    for (let payment of payments) {
+
+        if (
+            payment.bookingId === bookingId &&
+            payment.status === "Completed"
+        ) {
+            paid += Number(payment.amount);
+        }
+    }
+
+    return paid;
+}
+
 
