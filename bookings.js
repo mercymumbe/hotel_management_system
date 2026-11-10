@@ -58,25 +58,25 @@ function displayCustomers() {
 
 function displayRooms() {
 
+    roomSelect.innerHTML = '<option value="">Choose room</option>';
+
     for (let i = 0; i < rooms.length; i++) {
 
-        if (rooms[i].status === "Available") {
+        if (rooms[i].status.toLowerCase() === "available") {
 
             let option = document.createElement("option");
 
             option.value = rooms[i].roomNumber;
 
-            option.textContent = rooms[i].roomNumber + " - " +
-                rooms[i].roomType + " - KSh " + rooms[i].price;
+            option.textContent =
+                rooms[i].roomNumber + " - " +
+                rooms[i].roomType + " - KSh " +
+                rooms[i].price;
 
             roomSelect.appendChild(option);
-
         }
-
     }
-
 }
-
 
 
 // calculate number of nights
