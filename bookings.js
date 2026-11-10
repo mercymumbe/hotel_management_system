@@ -109,7 +109,7 @@ function calculateTotalCost() {
 
 
     // Get the selected room price
-        for (let i = 0; i < rooms.length; i++) {
+    for (let i = 0; i < rooms.length; i++) {
 
         if (String(rooms[i].roomNumber) === roomSelect.value) {
 
@@ -138,7 +138,7 @@ function checkRoomAvailability(roomNumber, startDate, endDate) {
 
     for (let booking of bookings) {
 
-    // Ignore the booking currently being edited
+        // Ignore the booking currently being edited
         if (booking.bookingId === editingBookingId) {
             continue;
         }
@@ -263,10 +263,10 @@ function displayBookings(records = bookings) {
         `;
 
         // Edit button
-         let editButton = row.querySelector(".edit-btn");
-    
+        let editButton = row.querySelector(".edit-btn");
 
-        editButton.addEventListener("click", function() {
+
+        editButton.addEventListener("click", function () {
             editBooking(booking.bookingId);
         });
 
@@ -274,7 +274,7 @@ function displayBookings(records = bookings) {
         let deleteButton = row.querySelector("button");
 
         // Delete booking when clicked
-        deleteButton.addEventListener("click", function() {
+        deleteButton.addEventListener("click", function () {
 
             deleteBooking(booking.bookingId);
 
@@ -285,7 +285,7 @@ function displayBookings(records = bookings) {
 // Edit booking records
 function editBooking(bookingId) {
 
-    let booking = bookings.find(function(item) {
+    let booking = bookings.find(function (item) {
 
         return item.bookingId === bookingId;
 
@@ -339,10 +339,10 @@ function editBooking(bookingId) {
 }
 
 // booking form submission
-bookingForm.addEventListener("submit", function(event) {
+bookingForm.addEventListener("submit", function (event) {
 
     event.preventDefault();
-    
+
     // Get values from the form
     let customerId = customerSelect.value;
     let roomNumber = roomSelect.value;
@@ -353,13 +353,13 @@ bookingForm.addEventListener("submit", function(event) {
     let nights = calculateNights();
 
     // Check if customer and room are selected
-     if (customerId === "" || roomNumber === "") {
+    if (customerId === "" || roomNumber === "") {
 
         alert("Please select a customer and a room.");
         return;
     }
-     // Make sure the selected customer still exists
-    let customerExists = customers.some(function(customer) {
+    // Make sure the selected customer still exists
+    let customerExists = customers.some(function (customer) {
         return String(customer.id) === String(customerId);
     });
 
@@ -370,11 +370,11 @@ bookingForm.addEventListener("submit", function(event) {
     }
 
     // Check the dates
-     if (nights <= 0) {
+    if (nights <= 0) {
         alert("Check-out must be after check-in.");
         return;
     }
-    
+
 
     // Check if the room is already booked
     if (!checkRoomAvailability(roomNumber, startDate, endDate)) {
@@ -411,34 +411,61 @@ bookingForm.addEventListener("submit", function(event) {
     // Calculate total cost
     let cost = nights * price;
 
-    // Create a new booking
-     let newBooking = {
-        bookingId: generateBookingId(),
-        customerId: customerId,
-        roomNumber: roomNumber,
-        checkIn: startDate,
-        checkOut: endDate,
-        nights: nights,
-        totalCost: cost,
-        status: status
-    };
+    // Check whether we are editing or adding a booking
+    if (editingBookingId !== null) {
 
-    // Add booking to the array
-    bookings.push(newBooking);
+        // Update existing booking
+        for (let booking of bookings) {
 
-    // Save booking
-    saveBookings();
+            if (booking.bookingId === editingBookingId) {
+                customerId: customerId,
+                    roomNumber: roomNumber,
+                        checkIn: startDate,
+                            checkOut: endDate,
+                                nights: nights,
+                                    totalCost: cost,
+                                        status: status
 
-    // Update the page
-    displayBookings(bookings);
-    displayStatistics();
+                break;
+            }
+        }
+        editingBookingId = null;
 
-    // Clear the form
-    bookingForm.reset();
-    totalCost.value = "";
+        alert("Booking updated successfully!");
 
-    alert("Booking saved successfully!");
-});
+    } else {
+
+        // Create a new booking
+        let newBooking = {
+
+            bookingId: generateBookingId(),
+            customerId: customerId,
+            roomNumber: roomNumber,
+            checkIn: startDate,
+            checkOut: endDate,
+            nights: nights,
+            totalCost: cost,
+            status: status
+
+        };
+
+        // Add booking to the array
+        bookings.push(newBooking);
+    }
+
+        // Save booking
+        saveBookings();
+
+        // Update the page
+        displayBookings(bookings);
+        displayStatistics();
+
+        // Clear the form
+        bookingForm.reset();
+        totalCost.value = "";
+
+        alert("Booking saved successfully!");
+    });
 
 
 // deleting booking records
@@ -450,7 +477,7 @@ function deleteBooking(bookingId) {
         return;
     }
 
-    bookings = bookings.filter(function(booking) {
+    bookings = bookings.filter(function (booking) {
 
         return booking.bookingId !== bookingId;
 
