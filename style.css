@@ -241,7 +241,7 @@ thead, th{
     color:rgb(4,4,87);
   }
   .booking-card{
-    background-color: rgb(100, 14, 161);
+    background-color: rgb(4,4,87);
     color: rgb(219, 145, 237);
     padding: 10px;
     margin: 5px;
@@ -264,4 +264,12 @@ thead, th{
     border-radius: 8px;
     box-shadow: 0 2px 8px rgb(13, 13, 13);
   }
-  
+ .Cancelled-card{
+    background-color: red;
+    color: rgb(80, 45, 44);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(13, 13, 13);
+ }
+ 
