@@ -15,19 +15,40 @@ let customers = JSON.parse(localStorage.getItem("customers")) || [];
 let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
 
 // display for  rooms
-totalRooms.textContent = rooms.length;
+function displayStatistics() {
 
-let available = 0;
+    let total = 20;
+    let available = 0;
+    let booked = 0;
+    let occupied = 0;
 
-for (let i = 0; i < rooms.length; i++) {
+    // Check every room
+     for (let i = 0; i < rooms.length; i++) {
 
-    if (rooms[i].status === "Available") {
-        available++;
+        let status = rooms[i].status.toLowerCase();
+
+        if (status === "booked") {
+            booked++;
+        }
+
+        else if (status === "occupied") {
+            occupied++;
+        }
     }
+ // Calculate available rooms
+    available = total - booked - occupied;
 
+    // Display statistics
+    totalRooms.textContent = total;
+    availableRooms.textContent = available;
+    bookedRooms.textContent = booked;
+    occupiedRooms.textContent = occupied;
 }
 
-availableRooms.textContent = available;
+
+// display customers
+totalCustomers.textContent = customers.length;
+
 
 
 // display for bookings
