@@ -37,32 +37,33 @@ function saveRooms() {
 
 function displayStatistics() {
 
-    let total = rooms.length;
+    let total = 20;
     let available = 0;
     let booked = 0;
     let occupied = 0;
 
     // Check every room
-    for (let i = 0; i < rooms.length; i++) {
+     for (let i = 0; i < rooms.length; i++) {
 
-        if (rooms[i].status === "Available") {
-            available++;
-        }
-        else if (rooms[i].status === "Booked") {
+        let status = rooms[i].status.toLowerCase();
+
+        if (status === "booked") {
             booked++;
         }
-        else if (rooms[i].status === "Occupied") {
+
+        else if (status === "occupied") {
             occupied++;
         }
     }
+ // Calculate available rooms
+    available = total - booked - occupied;
 
-    // Show the statistics on the page
+    // Display statistics
     totalRooms.textContent = total;
     availableRooms.textContent = available;
     bookedRooms.textContent = booked;
     occupiedRooms.textContent = occupied;
 }
-
 
 
 // display the recoded rooms in a tabe
