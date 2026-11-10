@@ -90,5 +90,43 @@ function displayBookings() {
         }
     }
 }
+// display bookingdetails
+function displayBookingDetails() {
+
+    let selectedBooking = null;
+
+    for (let booking of bookings) {
+
+        if (booking.bookingId === bookingSelect.value) {
+
+            selectedBooking = booking;
+            break;
+        }
+    }
+
+    if (selectedBooking === null) {
+
+        customerName.value = "";
+        bookingAmount.value = "";
+        amountPaid.max = "";
+
+        return;
+    }
+
+    let paid = getAmountPaid(selectedBooking.bookingId);
+
+    let balance = Number(selectedBooking.totalCost) - paid;
+
+    customerName.value =
+        getCustomerName(selectedBooking.customerId);
+
+    bookingAmount.value = Number(selectedBooking.totalCost);
+
+    // Limit the payment to the remaining balance
+    amountPaid.max = balance;
+    amountPaid.placeholder = "Maximum: KSh " +
+        balance.toLocaleString("en-KE");
+}
+
 
 
