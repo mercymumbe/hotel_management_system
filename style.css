@@ -144,3 +144,11 @@ thead, th{
     border-radius: 8px;
     box-shadow: 0 2px 8px rgb(38, 139, 216);
 }
+.login-container{
+    margin: 0px;
+    padding: 0px;
+    width: 1200px;
+    min-height: 650px;
+    
+    
+}
