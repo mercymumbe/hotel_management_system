@@ -33,14 +33,13 @@ let customers = JSON.parse(localStorage.getItem("customers")) || [];
 // get rooms from localStorage
 let rooms = JSON.parse(localStorage.getItem("rooms")) || [];
 
+// Store the ID of the booking being edited
+let editingBookingId = null;
 
 // save booking records in the local storage.
 function saveBookings() {
     localStorage.setItem("bookings", JSON.stringify(bookings));
 }
-
-// Store the ID of the booking being edited
-let editingBookingId = null;
 
 
 // display customers
