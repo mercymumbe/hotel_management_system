@@ -97,7 +97,26 @@ customerForm.addEventListener("submit", function(event) {
     let phone = customerPhone.value.trim();
     let email = customerEmail.value.trim();
 
-   // Create a customer object
+   if (editingCustomerId !== null) {
+
+    // Update existing customer
+    for (let customer of customers) {
+
+        if (customer.id === editingCustomerId) {
+
+            customer.name = name;
+            customer.phone = phone;
+            customer.email = email;
+
+            break;
+        }
+    }
+
+    editingCustomerId = null;
+
+}else {
+
+    // Create a customer object
     let customer = {
         id: "C00" + (customers.length + 1),
         name: name,
@@ -107,6 +126,7 @@ customerForm.addEventListener("submit", function(event) {
 
     // Add customer to the array
     customers.push(customer);
+}
 
     // Store the ID of the customer being edited
 let editingCustomerId = null;
