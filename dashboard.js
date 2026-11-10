@@ -8,3 +8,6 @@ let recentBookingList = document.getElementById("recentBookingList");
 // get saved rooms records from localstorage
 let rooms = JSON.parse(localStorage.getItem("rooms")) || [];
 
+// get saved customers records from localstorage
+let customers = JSON.parse(localStorage.getItem("customers")) || [];
+
