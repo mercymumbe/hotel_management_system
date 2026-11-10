@@ -145,10 +145,53 @@ thead, th{
     box-shadow: 0 2px 8px rgb(38, 139, 216);
 }
 .login-container{
-    margin: 0px;
+    margin: 50px;
     padding: 0px;
-    width: 1200px;
     min-height: 650px;
     
     
 }
+.login-card{
+     background-color: white;
+    padding: 25px;
+    margin: 100px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(38, 139, 216);
+}
+.create-account{
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 25px;
+    font-size: 14px;
+}
+.create-account a {
+    color: rgb(4,4,87);;
+    text-decoration: none;
+    font-weight: 600;
+}
+.portal-label{
+    text-align: center;
+}
+.login-form h2{
+    text-align: center;
+}
+.login-form p{
+    text-align: center;
+}
+.hotel-image{
+    width: 100%;
+}
+ /* footer*/
+  footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: black;
+    color: white;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+
+
+  }
