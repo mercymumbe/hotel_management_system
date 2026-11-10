@@ -231,3 +231,11 @@ function displayPayments(records = payments) {
     }
 }
 
+// Add a new payment
+
+paymentForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+
+});
