@@ -59,5 +59,11 @@ registerForm.addEventListener("submit", function(event) {
             return;
         }
     }
+     // Create account
+    let admin = {
+        name: name,
+        email: email,
+        password: password
+    };
 })
 
