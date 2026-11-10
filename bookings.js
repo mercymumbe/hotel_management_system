@@ -42,6 +42,8 @@ function saveBookings() {
 // display customers
 function displayCustomers() {
 
+    customerSelect.innerHTML = '<option value="">Choose customer</option>';
+
     for (let i = 0; i < customers.length; i++) {
 
         let option = document.createElement("option");
