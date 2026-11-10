@@ -372,5 +372,10 @@ td {
     border: solid, black;
     color: rgb(4, 4, 87);
 }
+.login-container{
+    background-image: url(images/hotel_building.jpg);
+}
 
-
+.hotel-name{
+    color: white ;
+}
