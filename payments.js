@@ -237,5 +237,47 @@ paymentForm.addEventListener("submit", function(event) {
 
     event.preventDefault();
 
+    let bookingId = bookingSelect.value;
+    let amount = Number(amountPaid.value);
+    let method = paymentMethod.value;
+    let status = paymentStatus.value;
 
+    // Check if a booking is selected
+
+    if (bookingId === "") {
+        alert("Please select a booking.");
+        return;
+    }
+
+    let selectedBooking = null;
+
+    for (let booking of bookings) {
+
+        if (booking.bookingId === bookingId) {
+            selectedBooking = booking;
+            break;
+        }
+    }
+
+    if (selectedBooking === null) {
+        alert("Booking not found.");
+        return;
+    }
+    // Check the remaining balance
+
+    let paid = getAmountPaid(bookingId);
+    let balance = selectedBooking.totalCost - paid;
+
+    if (amount <= 0) {
+        alert("Enter a valid payment amount.");
+        return;
+    }
+
+    if (amount > balance) {
+        alert("Payment is greater than the remaining balance.");
+        return;
+    }
+    let today = new Date().toISOString().split("T")[0];
+
+    
 });
