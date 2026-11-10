@@ -210,29 +210,31 @@ function displayStatistics() {
 
 }
 // display booking records in a table
-function displayBookings(records) {
+function displayBookings(records = bookings) {
 
-    // Clear the table
     bookingList.innerHTML = "";
 
-    // Check if there are no bookings
     if (records.length === 0) {
-        bookingList.innerHTML = "<tr><td colspan='9'>No bookings found</td></tr>";
+
+        bookingList.innerHTML =
+            "<tr><td colspan='9'>No bookings found</td></tr>";
+
         return;
     }
 
-    // Go through each booking
     for (let booking of records) {
 
-        // Find customer name
+        // Find the customer name
         let customerName = "Unknown Customer";
 
         for (let customer of customers) {
-            if (customer.id === booking.customerId) {
+
+            if (String(customer.id) === String(booking.customerId)) {
+
                 customerName = customer.name;
+                break;
             }
         }
-
         // Create a new table row
         let row = document.createElement("tr");
 
@@ -244,7 +246,11 @@ function displayBookings(records) {
             <td>${booking.checkOut}</td>
             <td>${booking.nights}</td>
             <td>KSh ${Number(booking.totalCost).toLocaleString("en-KE")}</td>
-            <td><span class="status ${booking.status.toLowerCase()}">${booking.status}</span></td>
+            <td>
+                <span class="status ${String(booking.status).toLowerCase()}">
+                    ${booking.status}
+                </span>
+            </td>
             <td><button class="delete-btn">Delete</button></td>
         `;
 
@@ -252,13 +258,14 @@ function displayBookings(records) {
         let deleteButton = row.querySelector("button");
 
         // Delete booking when clicked
-        deleteButton.addEventListener("click", function () {
+        deleteButton.addEventListener("click", function() {
+
             deleteBooking(booking.bookingId);
+
         });
         bookingList.appendChild(row);
-    }
 }
-
+}
 // save the booking
 bookingForm.addEventListener("submit", function(event) {
 
@@ -275,7 +282,18 @@ bookingForm.addEventListener("submit", function(event) {
 
     // Check if customer and room are selected
      if (customerId === "" || roomNumber === "") {
+
         alert("Please select a customer and a room.");
+        return;
+    }
+     // Make sure the selected customer still exists
+    let customerExists = customers.some(function(customer) {
+        return String(customer.id) === String(customerId);
+    });
+
+    if (!customerExists) {
+
+        alert("Please select a registered customer.");
         return;
     }
 
@@ -284,6 +302,7 @@ bookingForm.addEventListener("submit", function(event) {
         alert("Check-out must be after check-in.");
         return;
     }
+    
 
     // Check if the room is already booked
     if (!checkRoomAvailability(roomNumber, startDate, endDate)) {
@@ -294,25 +313,28 @@ bookingForm.addEventListener("submit", function(event) {
 
     // Get the room price
     let price = 0;
+    let selectedRoomExists = false;
 
     for (let room of rooms) {
 
-        if (String(room.roomNumber) === roomNumber &&
-            room.status === "Available") {
+        if (String(room.roomNumber) === String(roomNumber)) {
 
-            price = Number(room.price);
+            if (String(room.status).toLowerCase() === "available") {
 
+                price = Number(room.price);
+                selectedRoomExists = true;
+            }
+
+            break;
         }
-
     }
 
-    if (price <= 0) {
+    if (!selectedRoomExists || price <= 0) {
 
         alert("The selected room is not available.");
-
         return;
-
     }
+
 
     // Calculate total cost
     let cost = nights * price;
@@ -351,14 +373,24 @@ function deleteBooking(bookingId) {
 
     let answer = confirm("Are you sure you want to delete this booking?");
 
-    if (!answer) return;
+    if (!answer) {
+        return;
+    }
 
-    bookings = bookings.filter(function (booking) {
+    bookings = bookings.filter(function(booking) {
+
         return booking.bookingId !== bookingId;
+
     });
 
     saveBookings();
 
-    displayBookings(bookings);
+    displayBookings();
     displayStatistics();
+
 }
+
+displayCustomers();
+displayRooms();
+displayBookings();
+displayStatistics();
