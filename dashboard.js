@@ -14,3 +14,18 @@ let customers = JSON.parse(localStorage.getItem("customers")) || [];
 // get saved bookings records from localStorage
 let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
 
+// display for  rooms
+totalRooms.textContent = rooms.length;
+
+let available = 0;
+
+for (let i = 0; i < rooms.length; i++) {
+
+    if (rooms[i].status === "Available") {
+        available++;
+    }
+
+}
+
+availableRooms.textContent = available;
+
