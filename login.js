@@ -90,5 +90,30 @@ loginForm.addEventListener("submit", function(event) {
     // Get saved user
     let admin = JSON.parse(localStorage.getItem("admin"));
 
-    
+   // Check if an account exists
+    if (admin === null) {
+
+        alert("Please create an account first.");
+        return;
+
+    }
+
+    // Check login details
+    if (email === admin.email && password === admin.password) {
+
+        alert("Login successful!");
+
+        // Save login information
+        sessionStorage.setItem("loggedIn", "true");
+        sessionStorage.setItem("adminName", admin.name);
+
+        // Open dashboard
+        window.location.href = "dashboard.html";
+
+    } else {
+
+        alert("Incorrect email or password!");
+
+    }
+ 
 });
