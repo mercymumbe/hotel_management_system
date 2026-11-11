@@ -15,6 +15,9 @@ let totalCustomers = document.getElementById("totalCustomers");
 // Get customers from localStorage
 let customers = JSON.parse(localStorage.getItem("customers")) || [];
 
+// Store the ID of the customer being edited
+let editingCustomerId = null;
+
 // display function
 function displayCustomers() {
 
@@ -128,8 +131,7 @@ customerForm.addEventListener("submit", function(event) {
     customers.push(customer);
 }
 
-    // Store the ID of the customer being edited
-let editingCustomerId = null;
+    
 
     // Save customers in localStorage
     localStorage.setItem("customers", JSON.stringify(customers));
