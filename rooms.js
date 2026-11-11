@@ -254,7 +254,7 @@ roomSearch.addEventListener("input", function() {
 });
 
 
-// 8. Display saved rooms when the page opens
+//  Display saved rooms when the page opens
 displayRooms();
 displayStatistics();
 
