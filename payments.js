@@ -97,7 +97,7 @@ function displayBookingDetails() {
 
     for (let booking of bookings) {
 
-        if (booking.bookingId === bookingSelect.value) {
+        if (String(booking.bookingId) === String(bookingSelect.value)) {
 
             selectedBooking = booking;
             break;
@@ -124,9 +124,11 @@ function displayBookingDetails() {
 
     // Limit the payment to the remaining balance
     amountPaid.max = balance;
+
     amountPaid.placeholder = "Maximum: KSh " +
         balance.toLocaleString("en-KE");
 }
+
 // Update booking details when selection changes
 bookingSelect.addEventListener("change", displayBookingDetails);
 
