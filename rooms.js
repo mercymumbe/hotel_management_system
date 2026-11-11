@@ -100,6 +100,7 @@ function displayRooms(roomRecords = rooms) {
         let typeCell = document.createElement("td");
         let priceCell = document.createElement("td");
         let statusCell = document.createElement("td");
+        let actionCell = document.createElement("td");
 
         // Display room details
         numberCell.textContent = room.roomNumber;
