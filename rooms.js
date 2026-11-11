@@ -32,6 +32,8 @@ function saveRooms() {
         JSON.stringify(rooms)
     );
 }
+// Store the room being edited
+let editIndex = -1;
 
 // display room statistics
 
@@ -66,11 +68,10 @@ function displayStatistics() {
 }
 
 
-// display the recoded rooms in a tabe
+// display the recorded rooms in a table
 function displayRooms(roomRecords = rooms) {
 
     roomList.innerHTML = "";
-
 
     // Check if there are no rooms
     if (roomRecords.length === 0) {
@@ -78,13 +79,14 @@ function displayRooms(roomRecords = rooms) {
         let row = document.createElement("tr");
         let cell = document.createElement("td");
 
-        cell.colSpan = 4;
+        cell.colSpan = 5;
         cell.textContent = "No rooms found";
 
         row.appendChild(cell);
         roomList.appendChild(row);
 
         return;
+    }
     }
 
     // Display each room
