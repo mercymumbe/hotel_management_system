@@ -41,11 +41,11 @@ function getAmountPaid(bookingId) {
 
     for (let payment of payments) {
 
-        if (
-            payment.bookingId === bookingId &&
+          if (
+            String(payment.bookingId) === String(bookingId) &&
             payment.status === "Completed"
         ) {
-            paid += Number(payment.amount);
+            paid += Number(payment.amount) || 0;
         }
     }
 
@@ -255,13 +255,15 @@ paymentForm.addEventListener("submit", function(event) {
 
     for (let booking of bookings) {
 
-        if (booking.bookingId === bookingId) {
+        if (String(booking.bookingId) === String(bookingId)) {
+
             selectedBooking = booking;
             break;
         }
     }
 
     if (selectedBooking === null) {
+
         alert("Booking not found.");
         return;
     }
