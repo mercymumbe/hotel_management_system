@@ -411,3 +411,8 @@ background-color: rgb(232, 203, 12);
     border-radius: 8px;
     box-shadow: 0 2px 8px rgb(13, 13, 13);
 }
+.section-header a{
+    text-decoration: none;
+    color:  rgb(4, 4, 87);
+    font-weight: bold;
+}
