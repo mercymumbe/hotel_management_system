@@ -131,6 +131,14 @@ editButton.addEventListener("click", function() {
     editRoom(i);
 });
 
+//  Create Delete button
+let deleteButton = document.createElement("button");
+deleteButton.textContent = "Delete";
+
+deleteButton.addEventListener("click", function() {
+    deleteRoom(i);
+});
+
     // Add cells to the row
      row.append(
             numberCell,
