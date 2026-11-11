@@ -416,3 +416,19 @@ background-color: rgb(232, 203, 12);
     color:  rgb(4, 4, 87);
     font-weight: bold;
 }
+.bookedrooms-card{
+background-color: rgb(232, 203, 12);
+    color: rgb(119, 145, 80);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(13, 13, 13);
+}
+.occupiedrooms-card{
+     background-color: rgb(86, 173, 86);
+    color: greenyellow;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(13, 13, 13);
+}
