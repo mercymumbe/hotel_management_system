@@ -51,6 +51,24 @@ function getAmountPaid(bookingId) {
 
     return paid;
 }
+// display bookings
+function displayBookings() {
+
+    bookingSelect.innerHTML = '<option value="">Choose booking</option>';
+
+    for (let i = 0; i < bookings.length; i++) {
+
+        let option = document.createElement("option");
+
+        option.value = bookings[i].bookingId;
+
+        // Display booking ID and customer name
+        option.textContent = bookings[i].bookingId + " - " + bookings[i].customerId;
+
+        bookingSelect.appendChild(option);
+    }
+}
+
 // find customers name function.
 function getCustomerName(customerId) {
 
@@ -64,32 +82,7 @@ function getCustomerName(customerId) {
 
     return "Unknown Customer";
 }
-// booking function
-function displayBookings() {
-
-    bookingSelect.innerHTML =
-        '<option value="">Choose booking</option>';
-
-    for (let booking of bookings) {
-
-        let paid = getAmountPaid(booking.bookingId);
-
-        let balance = Number(booking.totalCost) - paid;
-
-        if (balance > 0) {
-
-            let option = document.createElement("option");
-
-            option.value = booking.bookingId;
-
-            option.textContent =
-                booking.bookingId + " - " +
-                getCustomerName(booking.customerId);
-
-            bookingSelect.appendChild(option);
-        }
-    }
-}
+        
 // display bookingdetails
 function displayBookingDetails() {
 
