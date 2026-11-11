@@ -379,3 +379,35 @@ td {
 .hotel-name{
     color: white ;
 }
+.totalrooms-card{
+      background-color: rgb(4, 4, 87);
+    color: rgb(218, 216, 218);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(13, 13, 13);
+}
+.availablerooms-card{
+     background-color: green;
+    color: greenyellow;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(13, 13, 13);
+}
+.totalbookings-card{
+background-color: rgb(232, 203, 12);
+    color: rgb(119, 145, 80);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(13, 13, 13);
+}
+.totalcustomer-card{
+    background-color: rgb(86, 173, 86);
+    color: greenyellow;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(13, 13, 13);
+}
