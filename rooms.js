@@ -139,6 +139,10 @@ deleteButton.addEventListener("click", function() {
     deleteRoom(i);
 });
 
+//  create buttons to actioncell
+actionCell.appendChild(editButton);
+actionCell.appendChild(deleteButton);
+
     // Add cells to the row
      row.append(
             numberCell,
