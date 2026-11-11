@@ -91,7 +91,9 @@ Wait a few minutes for the website to be published.
 
 ## Screenshots
 
-
+![image of landing page](images/Screenshot_landingpage.png)
+![image of a customer page](images/Screenshot_customer_page.png)
+![image of payments](images/Screenshot_payments_page.png)
 
 ## Author
 
