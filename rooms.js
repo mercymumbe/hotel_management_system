@@ -121,7 +121,7 @@ function displayRooms(roomRecords = rooms) {
         statusLabel.classList.add(room.status);
 
         statusCell.appendChild(statusLabel);
-
+        // //////////////
     // Add cells to the row
      row.append(
             numberCell,
@@ -133,7 +133,7 @@ function displayRooms(roomRecords = rooms) {
     // Add row to the table
     roomList.appendChild(row);
     }
-}
+
 
 
 
