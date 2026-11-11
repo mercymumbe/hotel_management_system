@@ -148,7 +148,8 @@ actionCell.appendChild(deleteButton);
             numberCell,
             typeCell,
             priceCell,
-            statusCell
+            statusCell,
+            actionCell
         );
 
     // Add row to the table
