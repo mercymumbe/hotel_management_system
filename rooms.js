@@ -155,9 +155,25 @@ actionCell.appendChild(deleteButton);
     // Add row to the table
     roomList.appendChild(row);
     }
+    
+// Edit room function
+function editRoom(index) {
 
+    // Get the selected room
+    let room = rooms[index];
 
+    // Put room details into the form
+    roomNumber.value = room.roomNumber;
+    roomType.value = room.roomType;
+    roomPrice.value = room.price;
+    roomStatus.value = room.status;
 
+    // Store the index of the room being edited
+    editIndex = index;
+
+    // Change button text
+    roomForm.querySelector("button[type='submit']").textContent = "Update Room";
+}
 
 //  add new room button using eventlistener 
 roomForm.addEventListener("submit", function (event) {
