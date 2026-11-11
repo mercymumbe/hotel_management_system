@@ -155,7 +155,7 @@ actionCell.appendChild(deleteButton);
     // Add row to the table
     roomList.appendChild(row);
     }
-    
+
 // Edit room function
 function editRoom(index) {
 
@@ -173,6 +173,26 @@ function editRoom(index) {
 
     // Change button text
     roomForm.querySelector("button[type='submit']").textContent = "Update Room";
+}
+
+// creating a delete button function
+function deleteRoom(index) {
+
+    // Ask the user before deleting
+    let answer = confirm("Do you want to delete this room?");
+
+    if (answer) {
+
+        // Remove the selected room
+        rooms.splice(index, 1);
+
+        // Save the changes
+        saveRooms();
+
+        // Update the table and statistics
+        displayRooms();
+        displayStatistics()
+    }
 }
 
 //  add new room button using eventlistener 
