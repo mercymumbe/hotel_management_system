@@ -121,7 +121,16 @@ function displayRooms(roomRecords = rooms) {
         statusLabel.classList.add(room.status);
 
         statusCell.appendChild(statusLabel);
-        // //////////////
+
+        // create edit button
+        
+let editButton = document.createElement("button");
+editButton.textContent = "Edit";
+
+editButton.addEventListener("click", function() {
+    editRoom(i);
+});
+
     // Add cells to the row
      row.append(
             numberCell,
