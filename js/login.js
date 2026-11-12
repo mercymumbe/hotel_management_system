@@ -87,19 +87,36 @@ registerForm.addEventListener("submit", function (event) {
         username: username,
         password: password
     };
-    
-    // Save account in browser
-    localStorage.setItem("admin", JSON.stringify(admin));
+
+    // Add user to array
+    users.push(newUser);
+
+    // Save user records
+    saveUsers();
 
     // Clear registration form
     registerForm.reset();
+
+    // Display success message
+    alert("Account created successfully! Please login.");
+ // Return to login form
+    registerSection.hidden = true;
+    loginSection.hidden = false;
+
+    // Automatically fill username
+    username.value = newUsername;
+
+    // Clear registration message
+    registerMessage.textContent = "";
+
+});
 
     // Return to login form
     registerSection.hidden = true;
     loginSection.style.display = "block";
 
 
-})
+
 
 // login section
 loginForm.addEventListener("submit", function (event) {
