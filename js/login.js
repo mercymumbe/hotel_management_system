@@ -18,6 +18,9 @@ let registerMessage = document.getElementById("registerMessage");
 let loginSection = document.querySelector(".login-form");
 let registerSection = document.getElementById("registerSection");
 
+//  Get switching links
+let showRegister = document.getElementById("showRegister");
+let showLogin = document.getElementById("showLogin");
 
 // registration form section
 showRegister.addEventListener("click", function(event) {
