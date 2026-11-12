@@ -17,7 +17,7 @@ body {
 /* Left image section */
 .login-image {
     width: 50%;
-    background:url("../images/hotel_building.jpg");
+    background: url("../images/hotel_building.jpg");
     background-size: cover;
     background-position: center;
     color: white;
@@ -39,6 +39,7 @@ body {
     letter-spacing: 2px;
     margin-top: 8px;
 }
+
 /* Right section */
 .login-form-container {
     width: 50%;
@@ -58,13 +59,87 @@ body {
 
 /* Headings */
 .login-form h2 {
-    color: #102542;
+    color: rgb(4, 4, 87);
     font-size: 29px;
     margin-bottom: 10px;
 }
 
 .login-description {
-    color: #777;
     margin-bottom: 25px;
     font-size: 14px;
+}
+
+/* Form groups */
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: rgb(4, 4, 87);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgb(215, 206, 206);
+    border-radius: 7px;
+    font-size: 14px;
+}
+
+.form-group input:focus {
+    border-color: orange;
+}
+
+/* Remember me */
+.form-options {
+    margin-bottom: 20px;
+    color: black;
+    font-size: 14px;
+}
+
+/* Buttons */
+#loginButton,
+#registerButton {
+    width: 100%;
+    padding: 14px;
+    background-color: rgb(4, 4, 87);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+/* Switch between forms */
+.switch-text {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 14px;
+}
+
+.switch-text a {
+    color: orange;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.switch-text a:hover {
+    text-decoration: underline;
+}
+
+/* Messages */
+#loginMessage, #registerMessage {
+    margin-top: 12px;
+    font-size: 14px;
+}
+footer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: rgb(4, 4, 87);
+    color: white;
+    position: relative;
 }
