@@ -27,7 +27,8 @@
             <!-- navigation links -->
             <nav>
                 <ul>
-                    <li><a href="index.html" class="active"><i class="fa fa-home" aria-hidden="true"></i>Dashboard</a></li>
+                    <li><a href="index.html" class="active"><i class="fa fa-home" aria-hidden="true"></i>Dashboard</a>
+                    </li>
                     <li><a href="rooms.html"> <i class="fa-solid fa-bed"></i>Rooms</a></li>
                     <li><a href="customers.html"><i class="fa-solid fa-users"></i>Customers</a></li>
                     <li><a href="bookings.html"><i class="fa fa-address-book-o" aria-hidden="true"></i>Bookings</a></li>
@@ -60,23 +61,48 @@
             <section class="Statistics-card">
 
                 <div class="totalrooms-card">
-                    <h3>Total Rooms</h3>
-                    <p id="totalRooms">20</p>
+                    <div class="total-icon">
+                        <i class="fa-solid fa-bed"></i>
+                    </div>
+                    <div>
+                        <h3>Total Rooms</h3>
+                        <p id="totalRooms">20</p>
+                    </div>
+
                 </div>
 
                 <div class="availablerooms-card">
-                    <h3>Available Rooms</h3>
-                    <p id="availableRooms">20</p>
+                    <div class="available-icon">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <div>
+                        <h3>Available Rooms</h3>
+                        <p id="availableRooms">0</p>
+                    </div>
+
                 </div>
 
                 <div class="totalbookings-card">
-                    <h3>Total Bookings</h3>
-                    <p id="totalBookings">0</p>
+
+                    <div class="bookings-icon">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+                    <div>
+                        <h3>Total Bookings</h3>
+                        <p id="totalBookings">0</p>
+                    </div>
+
                 </div>
 
                 <div class="totalcustomer-card">
-                    <h3>Total Customers</h3>
-                    <p id="totalCustomers">0</p>
+                    <div class="customer-icon">
+                        <i class="fa-solid fa-users"></i>Customers</a>
+                    </div>
+                    <div>
+                        <h3>Total Customers</h3>
+                        <p id="totalCustomers">0</p>
+                    </div>
+
                 </div>
 
             </section>
@@ -85,6 +111,7 @@
             <section class="recent-bookings">
 
                 <div class="section-header">
+
 
                     <h2>Recent Bookings</h2>
 
