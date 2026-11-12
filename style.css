@@ -4,19 +4,67 @@ body {
     font-size: small;
     margin: 0;
     padding: 0;
+    background-color: whitesmoke;
+
 }
 
+/* Main container */
+.login-container {
+    display: flex;
+    min-height: 100vh;
+}
 
-/* footer*/
-footer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    background-color: black;
+/* Left image section */
+.login-image {
+    width: 50%;
+    background:url("../images/hotel_building.jpg");
+    background-size: cover;
+    background-position: center;
     color: white;
-    width: 100%;
-    position: relative;
-    bottom: 0;
-
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px;
 }
 
+/* Hotel branding */
+.hotel-brand h1 {
+    font-size: 30px;
+    letter-spacing: 3px;
+    color: orange;
+}
+
+.hotel-brand p {
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-top: 8px;
+}
+/* Right section */
+.login-form-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px;
+    background-color: white;
+}
+
+/* Form container */
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+}
+
+/* Headings */
+.login-form h2 {
+    color: #102542;
+    font-size: 29px;
+    margin-bottom: 10px;
+}
+
+.login-description {
+    color: #777;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
