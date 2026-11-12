@@ -68,7 +68,7 @@ registerForm.addEventListener("submit", function (event) {
     }
 
     // Check if account already exists
-   let existingUser = users.find(function (user) {
+    let existingUser = users.find(function (user) {
 
         return user.username.toLowerCase() === newUsername.toLowerCase();
     });
@@ -100,7 +100,7 @@ registerForm.addEventListener("submit", function (event) {
 
     // Return to login form
     registerSection.hidden = true;
-loginSection.style.display = "block";
+    loginSection.style.display = "block";
 
     // Automatically fill username
     username.value = newUsername;
@@ -111,7 +111,7 @@ loginSection.style.display = "block";
 });
 
 // Login existing user
-loginForm.addEventListener("submit", function(event) {
+loginForm.addEventListener("submit", function (event) {
 
     event.preventDefault();
 
@@ -132,7 +132,7 @@ loginForm.addEventListener("submit", function(event) {
         }
     }
 
-    // Check login result
+// Check login result
     if (foundUser) {
         alert("Login successful!");
         window.location.href = "dashboard.html";
