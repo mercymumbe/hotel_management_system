@@ -110,48 +110,34 @@ registerForm.addEventListener("submit", function (event) {
     registerMessage.textContent = "";
 
 });
-
-    // Return to login form
-    registerSection.hidden = true;
-    loginSection.style.display = "block";
-
-
-
-
-// login section
-loginForm.addEventListener("submit", function (event) {
+// Login existing user
+loginForm.addEventListener("submit", function(event) {
 
     event.preventDefault();
 
-    // Get login details
-    let email = document.getElementById("loginEmail").value;
-    let password = document.getElementById("loginPassword").value;
+    // Get username and password
+    let enteredUsername = username.value;
+    let enteredPassword = password.value;
 
-    // Get saved user
-    let admin = JSON.parse(localStorage.getItem("admin"));
+    // Check if user exists
+    let foundUser = false;
 
-    // Check if an account exists
-    if (admin === null) {
+    for (let i = 0; i < users.length; i++) {
 
-        alert("Please create an account first.");
-        return;
+        if (users[i].username === enteredUsername &&
+            users[i].password === enteredPassword) {
 
+            foundUser = true;
+            break;
+        }
     }
 
-    // Check login details
-    if (email === admin.email && password === admin.password) {
-
-        // Save login information
-        sessionStorage.setItem("loggedIn", "true");
-        sessionStorage.setItem("adminName", admin.name);
-
-        // Open dashboard
+    // Check login result
+    if (foundUser) {
+        alert("Login successful!");
         window.location.href = "dashboard.html";
-
     } else {
-
-        alert("Incorrect email or password!");
-
+        alert("Incorrect username or password!");
     }
 
 });
