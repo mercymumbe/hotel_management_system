@@ -60,16 +60,16 @@ registerForm.addEventListener("submit", function (event) {
     let newUsername = registerUsername.value.trim();
     let newPassword = registerPassword.value;
     let confirm = confirmPassword.value;
-    
+
     // Check if passwords match
     if (password !== confirmPassword) {
-         registerMessage.textContent = "Passwords do not match!";
+        registerMessage.textContent = "Passwords do not match!";
 
         return;
     }
 
     // Check if account already exists
-    let existingUser = users.find(function(user) {
+    let existingUser = users.find(function (user) {
 
         return user.username.toLowerCase() === newUsername.toLowerCase();
     });
@@ -81,11 +81,13 @@ registerForm.addEventListener("submit", function (event) {
 
 
     // Create account
-    let admin = {
+    let newUser = {
         name: name,
         email: email,
+        username: username,
         password: password
     };
+    
     // Save account in browser
     localStorage.setItem("admin", JSON.stringify(admin));
 
