@@ -53,29 +53,33 @@ showLogin.addEventListener("click", function (event) {
 registerForm.addEventListener("submit", function (event) {
 
     event.preventDefault();
-    // Get registration details
-    let name = document.getElementById("fullName").value.trim();
-    let email = document.getElementById("registerEmail").value.trim();
-    let password = document.getElementById("registerPassword").value;
-    let confirmPassword = document.getElementById("confirmPassword").value;
 
+    // Get registration details
+    let name = fullName.value.trim();
+    let userEmail = email.value.trim().toLowerCase();
+    let newUsername = registerUsername.value.trim();
+    let newPassword = registerPassword.value;
+    let confirm = confirmPassword.value;
+    
     // Check if passwords match
     if (password !== confirmPassword) {
-        alert("Passwords do not match!");
+         registerMessage.textContent = "Passwords do not match!";
+
         return;
     }
 
     // Check if account already exists
-    let savedUser = localStorage.getItem("admin");
+    let existingUser = users.find(function(user) {
 
-    if (savedUser !== null) {
-        let user = JSON.parse(savedUser);
+        return user.username.toLowerCase() === newUsername.toLowerCase();
+    });
 
-        if (user.email === email) {
-            alert("This email already has an account!");
-            return;
-        }
+    if (existingUser) {
+        registerMessage.textContent = "Username already exists!";
+        return;
     }
+
+
     // Create account
     let admin = {
         name: name,
