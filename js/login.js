@@ -1,11 +1,11 @@
 
-// 1. Get login form elements
+//  Get login form elements
 let loginForm = document.getElementById("loginForm");
 let username = document.getElementById("username");
 let password = document.getElementById("password");
 let errorMessage = document.getElementById("errorMessage");
 
-// 2. Get registration form elements
+//  Get registration form elements
 let registerForm = document.getElementById("registerForm");
 let fullName = document.getElementById("fullName");
 let email = document.getElementById("email");
@@ -13,6 +13,11 @@ let registerUsername = document.getElementById("registerUsername");
 let registerPassword = document.getElementById("registerPassword");
 let confirmPassword = document.getElementById("confirmPassword");
 let registerMessage = document.getElementById("registerMessage");
+
+//  Get form sections
+let loginSection = document.querySelector(".login-form");
+let registerSection = document.getElementById("registerSection");
+
 
 // registration form section
 showRegister.addEventListener("click", function(event) {
