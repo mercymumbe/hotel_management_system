@@ -22,8 +22,15 @@ let registerSection = document.getElementById("registerSection");
 let showRegister = document.getElementById("showRegister");
 let showLogin = document.getElementById("showLogin");
 
+// get saved users from localStorage
+let users = JSON.parse(localStorage.getItem("users")) || [];
+
+//   save users to localStorage
+function saveUsers() {
+    localStorage.setItem("users", JSON.stringify(users));
+}
 // registration form section
-showRegister.addEventListener("click", function(event) {
+showRegister.addEventListener("click", function (event) {
 
     event.preventDefault();
 
@@ -33,7 +40,7 @@ showRegister.addEventListener("click", function(event) {
 });
 
 // login form
-showLogin.addEventListener("click", function(event) {
+showLogin.addEventListener("click", function (event) {
 
     event.preventDefault();
 
@@ -43,10 +50,10 @@ showLogin.addEventListener("click", function(event) {
 });
 
 // create an account section
-registerForm.addEventListener("submit", function(event) {
+registerForm.addEventListener("submit", function (event) {
 
     event.preventDefault();
-// Get registration details
+    // Get registration details
     let name = document.getElementById("fullName").value.trim();
     let email = document.getElementById("registerEmail").value.trim();
     let password = document.getElementById("registerPassword").value;
@@ -69,13 +76,13 @@ registerForm.addEventListener("submit", function(event) {
             return;
         }
     }
-     // Create account
+    // Create account
     let admin = {
         name: name,
         email: email,
         password: password
     };
-     // Save account in browser
+    // Save account in browser
     localStorage.setItem("admin", JSON.stringify(admin));
 
     // Clear registration form
@@ -89,7 +96,7 @@ registerForm.addEventListener("submit", function(event) {
 })
 
 // login section
-loginForm.addEventListener("submit", function(event) {
+loginForm.addEventListener("submit", function (event) {
 
     event.preventDefault();
 
@@ -100,7 +107,7 @@ loginForm.addEventListener("submit", function(event) {
     // Get saved user
     let admin = JSON.parse(localStorage.getItem("admin"));
 
-   // Check if an account exists
+    // Check if an account exists
     if (admin === null) {
 
         alert("Please create an account first.");
@@ -123,5 +130,5 @@ loginForm.addEventListener("submit", function(event) {
         alert("Incorrect email or password!");
 
     }
- 
+
 });
