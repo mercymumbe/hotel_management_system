@@ -21,6 +21,30 @@ totalBookings.textContent = bookings.length;
 
 totalCustomers.textContent = customers.length;
 
+// Check every room
+     for (let i = 0; i < rooms.length; i++) {
+
+        let status = rooms[i].status.toLowerCase();
+
+        if (status === "booked") {
+            booked++;
+        }
+
+        else if (status === "occupied") {
+            occupied++;
+        }
+    }
+ // Calculate available rooms
+    let available = 0;
+
+for (let i = 0; i < rooms.length; i++) {
+
+    if (rooms[i].status === "Available") {
+        available++;
+    }
+}
+
+availableRooms.textContent = available;
 
     
     // Display statistics
