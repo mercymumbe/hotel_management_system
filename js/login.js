@@ -62,14 +62,13 @@ registerForm.addEventListener("submit", function (event) {
     let confirm = confirmPassword.value;
 
     // Check if passwords match
-    if (password !== confirmPassword) {
+    if (newPassword !== confirm) {
         registerMessage.textContent = "Passwords do not match!";
-
         return;
     }
 
     // Check if account already exists
-    let existingUser = users.find(function (user) {
+   let existingUser = users.find(function (user) {
 
         return user.username.toLowerCase() === newUsername.toLowerCase();
     });
@@ -79,13 +78,12 @@ registerForm.addEventListener("submit", function (event) {
         return;
     }
 
-
     // Create account
     let newUser = {
         name: name,
-        email: email,
-        username: username,
-        password: password
+        email: userEmail,
+        username: newUsername,
+        password: newPassword
     };
 
     // Add user to array
@@ -99,9 +97,10 @@ registerForm.addEventListener("submit", function (event) {
 
     // Display success message
     alert("Account created successfully! Please login.");
- // Return to login form
+
+    // Return to login form
     registerSection.hidden = true;
-    loginSection.hidden = false;
+loginSection.style.display = "block";
 
     // Automatically fill username
     username.value = newUsername;
@@ -110,13 +109,14 @@ registerForm.addEventListener("submit", function (event) {
     registerMessage.textContent = "";
 
 });
+
 // Login existing user
 loginForm.addEventListener("submit", function(event) {
 
     event.preventDefault();
 
     // Get username and password
-    let enteredUsername = username.value;
+    let enteredUsername = username.value.trim();
     let enteredPassword = password.value;
 
     // Check if user exists
@@ -124,7 +124,7 @@ loginForm.addEventListener("submit", function(event) {
 
     for (let i = 0; i < users.length; i++) {
 
-        if (users[i].username === enteredUsername &&
+        if (users[i].username.toLowerCase() === enteredUsername.toLowerCase() &&
             users[i].password === enteredPassword) {
 
             foundUser = true;
