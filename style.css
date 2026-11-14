@@ -382,6 +382,36 @@ background-color: white;
     padding: 20px;
     border-radius: 10px;  
 }
+.report-section {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    
+}
+
+.report-section h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.report-section > p {
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header p {
+    font-size: 13px;
+    margin-top: 5px;
+}
+
 /* ///////// */
 /* RESPONSIVE DESIGN */
 
@@ -396,6 +426,7 @@ background-color: white;
     }
 
 }
+
 
 @media (max-width: 700px) {
 
