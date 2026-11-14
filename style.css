@@ -248,3 +248,65 @@ nav li{
     gap: 18px;
     margin-bottom: 35px;
 }
+.totalrooms-card{
+    font-size: larger;
+    align-items: center;
+    gap: 15px;
+    background-color: rgb(245, 240, 230);
+    padding: 22px 15px;
+    border-radius: 10px;
+    border-left: 5px solid rgb(4, 4, 87);
+}
+.availablerooms-card{
+  font-size: larger;
+    align-items: center;
+    gap: 15px;
+    background-color: rgb(245, 240, 230);
+    padding: 22px 15px;
+    border-radius: 10px;
+    border-left: 5px solid rgb(4, 4, 87);  
+}
+.totalbookings-card{
+ font-size: larger;
+    align-items: center;
+    gap: 15px;
+    background-color: rgb(245, 240, 230);
+    padding: 22px 15px;
+    border-radius: 10px;
+    border-left: 5px solid rgb(4, 4, 87);   
+}
+.totalcustomer-card{
+    font-size: larger;
+    align-items: center;
+    gap: 15px;
+    background-color: rgb(245, 240, 230);
+    padding: 22px 15px;
+    border-radius: 10px;
+    border-left: 5px solid rgb(4, 4, 87);  
+}
+.section-header a{
+    text-decoration: none;
+    color: rgb(4, 4, 87);
+    font-size:large;
+    font-weight: bold;
+}
+.table-container{
+    width: 100%;
+    overflow-x: auto;
+}
+.table-container h2{
+    font-weight: bold;
+}
+ table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+th {
+    padding: 15px 10px;
+    text-align: center;
+}
+td {
+    padding: 15px 10px;
+    font-size: 14px;
+}
