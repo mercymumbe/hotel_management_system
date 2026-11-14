@@ -357,6 +357,16 @@ td {
     border: 1px solid rgb(215, 206, 206);
     border-radius: 7px;
 }
+.customer-form{
+ background-color: white;
+    padding: 25px;
+    border-radius: 10px;   
+}
+.customer-table{
+background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+}
 /* RESPONSIVE DESIGN */
 
 @media (max-width: 1100px) {
