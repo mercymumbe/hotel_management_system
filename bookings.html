@@ -4,184 +4,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blue Pearl Hotel | Dashboard</title>
+    <title>Blue Pearl Hotel | Bookings</title>
     <!-- Link CSS file -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" />
+
 
 </head>
+
 <body>
-<!-- Main dashboard container -->
-<div class="dashboard-container">
+    <!-- Main dashboard container -->
+    <div class="dashboard-container">
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
+        <!-- Sidebar -->
+        <aside class="sidebar">
 
-        <!-- Logo -->
-        <div class="logo">
-            <h2> Blue pearl Hotel</h2>
-
-        </div>
-        <!-- navigation links -->
-        <nav>
-            <ul>
-                <li><a href="index.html">Dashboard</a></li>
-                <li><a href="rooms.html">Rooms</a></li>
-                <li><a href="customers.html">Customers</a></li>
-                <li><a href="bookings.html">Bookings</a></li>
-                <li><a href="payments.html">Payments</a></li>
-            </ul>
-        </nav>
-
-    </aside>
-    <!-- Main content -->
-    <main class="main-content">
-
-        <!-- Header Section-->
-        <section>
-            <header class="header">
-                <div>
-                    <h1>Bookings</h1>
-                </div>
-                <div class="admin-info">
-                    <span>Administrator</span>
-                </div>
-
-            </header>
-        </section>
-
-        <!-- Booking Statistics -->
-        <section class="Statistics-card">
-
-            <div class="booking-card">
-                <h3>Total Bookings</h3>
-                <p id="totalBookings">0</p>
-            </div>
-
-            <div class="confirmed-card">
-                <h3>Confirmed</h3>
-                <p id="confirmedBookings">0</p>
-            </div>
-
-            <div class="Pending-card">
-                <h3>Pending</h3>
-                <p id="pendingBookings">0</p>
-            </div>
-
-            <div class="Cancelled-card">
-                <h3>Cancelled</h3>
-                <p id="cancelledBookings">0</p>
-            </div>
-
-        </section>
-        <br>
-
-        <!-- Select Room form section -->
-
-        <section class="select-form">
-            <form id="bookingForm">
-                <div class="form-group">
-                    <label for="customerSelect">Select Customer:</label>
-
-                    <select id="customerSelect" required>
-                        <option value="">Choose customer</option>
-                    </select>
-                </div>
-                <br>
-                <div class="form-group">
-                    <label for="roomSelect">Select Room</label>
-
-                    <select id="roomSelect" required>
-                        <option value="">Choose room</option>
-                    </select>
-                </div>
-                <br>
-
-                <!-- Check-in Date -->
-                <div class="form-group">
-                    <label for="checkIn">Check-in Date:</label>
-                    <br>
-                    <input type="date" id="checkIn" required>
-                </div>
-                <br>
-
-                <!-- Check-out Date -->
-                <div class="form-group">
-                    <label for="checkOut">Check-out Date:</label>
-                    <br>
-                    <input type="date" id="checkOut" required>
-                </div>
-                <br>
-
-                <!-- Booking Status -->
-                <div class="form-group">
-                    <label for="bookingStatus">Booking Status:</label>
-                    <select id="bookingStatus" required>
-                        <option value="Confirmed" class="confirmed">Confirmed</option>
-                        <option value="Pending" class="pending">Pending</option>
-                        <option value="Cancelled" class="cancelled">Cancelled</option>
-                    </select>
-                </div>
-                <br>
-
-                <!-- Total Cost -->
-                <div class="form-group">
-                    <label for="totalCost">Total Booking Cost (KSh):</label>
-                    <br>
-                    <input type="text" id="totalCost" placeholder="Calculated automatically" >
-                </div>
-
-                <br>
-                <!-- Form Buttons -->
-                <div class="booking-buttons">
-
-                    <button type="submit" class="save-btn" id="saveBookingBtn">
-                        Save Booking
-                    </button>
-                </div>
-            </form>
-        </section>
-
-        <!-- Booking Records -->
-        <section class="booking-table">
-
-            <div>
-
-                <h2>All Bookings</h2>
-
+            <!-- Logo -->
+            <div class="logo">
+                <h2> Blue pearl Hotel</h2>
 
             </div>
+            <!-- navigation links -->
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active"><i class="fa fa-home" aria-hidden="true"></i>Dashboard</a>
+                    </li>
+                    <li><a href="rooms.html"> <i class="fa-solid fa-bed"></i>Rooms</a></li>
+                    <li><a href="customers.html"><i class="fa-solid fa-users"></i>Customers</a></li>
+                    <li><a href="bookings.html"><i class="fa-solid fa-calendar-days"></i>Bookings</a></li>
+                    <li><a href="payments.html"><i class="fa fa-credit-card" aria-hidden="true"></i>payments</a></li>
+                    <li><a href="reports.html"><i class="fa-solid fa-chart-column"></i>Reports</a></li>
+                    <li><a href="settings.html"><i class="fa fa-sliders" aria-hidden="true"></i>Settings</a></li>
+                </ul>
+            </nav>
+            <button id="logoutBtn">Logout</button>
+        </aside>
+        <!-- Main content -->
+        <main class="main-content">
+
+            <!-- Header Section-->
+            <section>
+                <header class="header">
+                    <div>
+                        <h1>Bookings</h1>
+                    </div>
+                    <div class="admin-info">
+                        <span>Administrator</span>
+                    </div>
+
+                </header>
+            </section>
+
+            <!-- Booking Statistics -->
+            <section class="Statistics-card">
+
+                <div class="static-card">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <h3>Total Bookings</h3>
+                    <p id="totalBookings">0</p>
+                </div>
+
+                <div class="static-card">
+                     <i class="fa-solid fa-circle-check"></i>
+                    <h3>Confirmed</h3>
+                    <p id="confirmedBookings">0</p>
+                </div>
+
+                <div class="static-card">
+                     <i class="fa-solid fa-clock"></i>
+                    <h3>Pending</h3>
+                    <p id="pendingBookings">0</p>
+                </div>
+
+                <div class="static-card">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <h3>Cancelled</h3>
+                    <p id="cancelledBookings">0</p>
+                </div>
+
+            </section>
             <br>
-            <div class="table-container">
 
-                <table border="1">
+            <!-- Select Room form section -->
 
-                    <thead>
-                        <tr>
-                            <th>Booking ID</th>
-                            <th>Customer</th>
-                            <th>Room</th>
-                            <th>Check-in</th>
-                            <th>Check-out</th>
-                            <th>Nights</th>
-                            <th>Total Cost</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
+            <section class="select-form">
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label for="customerSelect">Select Customer:</label>
 
-                    <tbody id="bookingList">
-                        <!-- JavaScript will display bookings here -->
-                    </tbody>
+                        <select id="customerSelect" required>
+                            <option value="">Choose customer</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="roomSelect">Select Room</label>
 
-                </table>
+                        <select id="roomSelect" required>
+                            <option value="">Choose room</option>
+                        </select>
+                    </div>
+                    <br>
 
-            </div>
-        </section>
+                    <!-- Check-in Date -->
+                    <div class="form-group">
+                        <label for="checkIn">Check-in Date:</label>
+                        <br>
+                        <input type="date" id="checkIn" required>
+                    </div>
+                    <br>
 
-    </main>
-</div>
+                    <!-- Check-out Date -->
+                    <div class="form-group">
+                        <label for="checkOut">Check-out Date:</label>
+                        <br>
+                        <input type="date" id="checkOut" required>
+                    </div>
+                    <br>
+
+                    <!-- Booking Status -->
+                    <div class="form-group">
+                        <label for="bookingStatus">Booking Status:</label>
+                        <select id="bookingStatus" required>
+                            <option value="Confirmed" class="confirmed">Confirmed</option>
+                            <option value="Pending" class="pending">Pending</option>
+                            <option value="Cancelled" class="cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                    <br>
+
+                    <!-- Total Cost -->
+                    <div class="form-group">
+                        <label for="totalCost">Total Booking Cost (KSh):</label>
+                        <br>
+                        <input type="text" id="totalCost" placeholder="Calculated automatically">
+                    </div>
+
+                    <br>
+                    <!-- Form Buttons -->
+                    <div class="booking-buttons">
+
+                        <button type="submit" class="save-btn" id="saveBookingBtn">
+                            Save Booking
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Booking Records -->
+            <section class="booking-table">
+
+                <div>
+
+                    <h2>All Bookings</h2>
+
+
+                </div>
+                <br>
+                <div class="table-container">
+
+                    <table border="1">
+
+                        <thead>
+                            <tr>
+                                <th>Booking ID</th>
+                                <th>Customer</th>
+                                <th>Room</th>
+                                <th>Check-in</th>
+                                <th>Check-out</th>
+                                <th>Nights</th>
+                                <th>Total Cost</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="bookingList">
+                            <!-- JavaScript will display bookings here -->
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
 
     <script src="bookings.js"></script>
-    </body>
+</body>
 
 </html>
