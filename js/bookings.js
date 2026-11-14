@@ -271,7 +271,7 @@ function displayBookings(records = bookings) {
         });
 
         // Get the delete button
-        let deleteButton = row.querySelector("button");
+        let deleteButton = row.querySelector(".delete-btn");
 
         // Delete booking when clicked
         deleteButton.addEventListener("click", function () {
