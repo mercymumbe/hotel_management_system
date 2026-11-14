@@ -114,6 +114,7 @@ body {
     cursor: pointer;
     transition: 0.3s;
 }
+
 /* Switch between forms */
 .switch-text {
     text-align: center;
@@ -132,17 +133,20 @@ body {
 }
 
 /* Messages */
-#loginMessage, #registerMessage {
+#loginMessage,
+#registerMessage {
     margin-top: 12px;
     font-size: 14px;
 }
-footer{
+
+footer {
     text-align: center;
     grid-template-columns: repeat(2, 1fr);
     background-color: rgb(4, 4, 87);
     color: white;
     position: relative;
 }
+
 /* DASHBOARD CONTAINER */
 
 .dashboard-container {
@@ -192,9 +196,10 @@ nav a {
     border-radius: 7px;
     font-size: 16px;
     transition: 0.3s;
-    
+
 }
-nav li{
+
+nav li {
     list-style-type: none;
 }
 
@@ -203,8 +208,8 @@ nav li{
     font-size: 18px;
 }
 
- a:hover {
-    background-color:orange;
+a:hover {
+    background-color: orange;
     color: rgb(4, 4, 87);
 }
 
@@ -222,6 +227,7 @@ nav li{
     font-weight: bold;
     cursor: pointer;
 }
+
 /* MAIN CONTENT */
 
 .main-content {
@@ -240,6 +246,7 @@ nav li{
     margin-bottom: 35px;
     border-bottom: 3px solid;
 }
+
 /* STATISTICS SECTION */
 
 .Statistics-card {
@@ -248,7 +255,8 @@ nav li{
     gap: 18px;
     margin-bottom: 35px;
 }
-.static-card{
+
+.static-card {
     font-size: larger;
     align-items: center;
     gap: 15px;
@@ -258,29 +266,142 @@ nav li{
     border-left: 5px solid rgb(4, 4, 87);
 }
 
-.section-header a{
+.static-card i {
+    font-size: 30px;
+    color: orange;
+    margin-bottom: 12px;
+}
+
+.section-header a {
     text-decoration: none;
     color: rgb(4, 4, 87);
-    font-size:large;
+    font-size: large;
     font-weight: bold;
 }
-.table-container{
-    width: 100%;
-    overflow-x: auto;
-}
-.table-container h2{
+
+.table-container h2 {
     font-weight: bold;
 }
- table {
-    width: 100%;
+
+table {
     border-collapse: collapse;
     min-width: 650px;
 }
+
 th {
     padding: 15px 10px;
     text-align: center;
 }
+
 td {
     padding: 15px 10px;
     font-size: 14px;
+}
+
+.container-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 10px;
+}
+
+.room-form {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgb(215, 206, 206);
+    border-radius: 7px;
+}
+
+.save-btn {
+    width: 100%;
+    padding: 13px;
+    margin-top: 10px;
+    background-color: rgb(4, 4, 87);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.save-btn:hover {
+    background-color: orange;
+    color: rgb(4, 4, 87);
+}
+
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgb(215, 206, 206);
+    border-radius: 7px;
+    margin: 20px;
+}
+
+.room-table {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 1100px) {
+
+    .Statistics-card {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .sidebar nav ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .main-content {
+        padding: 20px 12px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .Statistics-card {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .section-header input {
+        width: 100%;
+    }
+
 }
