@@ -45,7 +45,7 @@ function displayStatistics() {
     let occupied = 0;
 
     // Check every room
-     for (let i = 0; i < rooms.length; i++) {
+      for (let i = 0; i < rooms.length; i++) {
 
         let status = rooms[i].status.toLowerCase();
 
@@ -56,7 +56,9 @@ function displayStatistics() {
         else if (status === "occupied") {
             occupied++;
         }
+
     }
+
  // Calculate available rooms
     available = total - booked - occupied;
 
@@ -74,7 +76,7 @@ function displayRooms(roomRecords = rooms) {
     roomList.innerHTML = "";
 
     // Check if there are no rooms
-    if (roomRecords.length === 0) {
+     if (roomRecords.length === 0) {
 
         let row = document.createElement("tr");
         let cell = document.createElement("td");
@@ -87,10 +89,10 @@ function displayRooms(roomRecords = rooms) {
 
         return;
     }
-    }
+
 
     // Display each room
-    for (let i = 0; i < roomRecords.length; i++) {
+     for (let i = 0; i < roomRecords.length; i++) {
 
         let room = roomRecords[i];
 
@@ -103,12 +105,13 @@ function displayRooms(roomRecords = rooms) {
         let actionCell = document.createElement("td");
 
         // Display room details
-        numberCell.textContent = room.roomNumber;
+         numberCell.textContent = room.roomNumber;
         typeCell.textContent = room.roomType;
 
         priceCell.textContent = "KSh " +
             Number(room.price).toLocaleString("en-KE");
-
+     
+    
     
     // Create status label
      let statusLabel = document.createElement("span");
@@ -154,7 +157,7 @@ actionCell.appendChild(deleteButton);
 
     // Add row to the table
     roomList.appendChild(row);
-    }
+     }
 
 // Edit room function
 function editRoom(index) {
@@ -162,7 +165,7 @@ function editRoom(index) {
     // Get the selected room
     let room = rooms[index];
 
-    // Put room details into the form
+     // Put room details into the form
     roomNumber.value = room.roomNumber;
     roomType.value = room.roomType;
     roomPrice.value = room.price;
@@ -175,6 +178,7 @@ function editRoom(index) {
     roomForm.querySelector("button[type='submit']").textContent = "Update Room";
 }
 
+
 // creating a delete button function
 function deleteRoom(index) {
 
@@ -186,28 +190,46 @@ function deleteRoom(index) {
         // Remove the selected room
         rooms.splice(index, 1);
 
+        // Reset form if deleted room was being edited
+        if (editIndex === index) {
+
+            roomForm.reset();
+            editIndex = -1;
+
+            roomForm.querySelector("button[type='submit']").textContent = "Save Room";
+        }
+
+        else if (editIndex > index) {
+            editIndex--;
+        }
+
         // Save the changes
         saveRooms();
+    
 
         // Update the table and statistics
         displayRooms();
-        displayStatistics()
+        displayStatistics();
     }
-}
+}}
 
-//  add new room button using eventlistener 
+
+// add new room button using eventlistener
 roomForm.addEventListener("submit", function (event) {
+
     event.preventDefault();
 
     // Get information from the form
-     let number = roomNumber.value.trim();
+    let number = roomNumber.value.trim();
     let type = roomType.value;
     let price = Number(roomPrice.value);
     let status = roomStatus.value;
 
     // Check if the room number already exists
-   let exists = rooms.some(function(room) {
-        return room.roomNumber.toLowerCase() === number.toLowerCase();
+    let exists = rooms.some(function(room, index) {
+
+        return room.roomNumber.toLowerCase() === number.toLowerCase()
+            && index !== editIndex;
     });
 
     if (exists) {
@@ -223,9 +245,18 @@ roomForm.addEventListener("submit", function (event) {
         status: status
     };
 
+    // Add or update room
+    if (editIndex === -1) {
 
-    // Add room to the list
-    rooms.push(room);
+        rooms.push(room);
+
+    } else {
+
+        rooms[editIndex] = room;
+        editIndex = -1;
+
+        roomForm.querySelector("button[type='submit']").textContent = "Save Room";
+    }
 
     // Save and display rooms
     saveRooms();
@@ -235,10 +266,12 @@ roomForm.addEventListener("submit", function (event) {
     // Clear the form
     roomForm.reset();
 
-    alert("Room added successfully!");
+    alert("Room saved successfully!");
 
 });
 
+
+// search for room
 roomSearch.addEventListener("input", function() {
 
     let searchValue = roomSearch.value.toLowerCase();
@@ -254,7 +287,6 @@ roomSearch.addEventListener("input", function() {
 });
 
 
-//  Display saved rooms when the page opens
+// Display saved rooms when the page opens
 displayRooms();
 displayStatistics();
-
