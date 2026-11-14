@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blue Pearl Hotel | Payments</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" />
+
+
 </head>
 
 <body>
@@ -23,14 +26,17 @@
             <!-- navigation links -->
             <nav>
                 <ul>
-                    <li><a href="index.html">Dashboard</a></li>
-                    <li><a href="rooms.html">Rooms</a></li>
-                    <li><a href="customers.html">Customers</a></li>
-                    <li><a href="bookings.html">Bookings</a></li>
-                    <li><a href="payments.html">Payments</a></li>
+                    <li><a href="index.html" class="active"><i class="fa fa-home" aria-hidden="true"></i>Dashboard</a>
+                    </li>
+                    <li><a href="rooms.html"> <i class="fa-solid fa-bed"></i>Rooms</a></li>
+                    <li><a href="customers.html"><i class="fa-solid fa-users"></i>Customers</a></li>
+                    <li><a href="bookings.html"><i class="fa-solid fa-calendar-days"></i>Bookings</a></li>
+                    <li><a href="payments.html"><i class="fa fa-credit-card" aria-hidden="true"></i>payments</a></li>
+                    <li><a href="reports.html"><i class="fa-solid fa-chart-column"></i>Reports</a></li>
+                    <li><a href="settings.html"><i class="fa fa-sliders" aria-hidden="true"></i>Settings</a></li>
                 </ul>
             </nav>
-
+            <button id="logoutBtn">Logout</button>
         </aside>
         <!-- Main Content -->
         <main class="main-content">
@@ -40,7 +46,7 @@
 
                 <div>
                     <h1>Payments</h1>
-        
+
                 </div>
 
                 <div class="admin-info">
@@ -52,22 +58,26 @@
             <!-- Payment Statistics -->
             <section class="Statistics-card">
 
-                <div class="totalpayments-card">
+                <div class="static-card">
+                    <i class="fas fa-wallet"></i>
                     <h3>Total Payments</h3>
                     <p id="totalPayments">0</p>
                 </div>
 
-                <div class="completepayments-card">
+                <div class="static-card">
+                    <i class="fas fa-check-circle"></i>
                     <h3>Completed Payments</h3>
                     <p id="completedPayments">0</p>
                 </div>
 
-                <div class="pendingpayments-card">
+                <div class="static-card">
+                    <i class="fas fa-clock"></i>
                     <h3>Pending Payments</h3>
                     <p id="pendingPayments">0</p>
                 </div>
 
-                <div class="received-card">
+                <div class="static-card">
+                     <i class="fas fa-money-bill-wave"></i>
                     <h3>Total Amount Received</h3>
                     <p id="totalAmount">KSh 0</p>
                 </div>
@@ -145,17 +155,16 @@
 
                     </form>
                 </section>
-                    <br>
+                <br>
 
- <!-- Payment Records -->
+                <!-- Payment Records -->
                 <section class="room-table">
 
                     <div class="section-header">
 
                         <h2>Payment Records</h2>
 
-                        <input type="text" id="paymentSearch"
-                            placeholder="Search payment...">
+                        <input type="text" id="paymentSearch" placeholder="Search payment...">
 
                     </div>
 
