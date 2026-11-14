@@ -343,7 +343,7 @@ td {
     padding: 10px;
     border: 1px solid rgb(215, 206, 206);
     border-radius: 7px;
-    margin: 20px;
+    margin: 10px;
 }
 
 .room-table {
@@ -351,7 +351,12 @@ td {
     padding: 25px;
     border-radius: 10px;
 }
-
+.section-header input{
+     width: 300px;
+    padding: 10px;
+    border: 1px solid rgb(215, 206, 206);
+    border-radius: 7px;
+}
 /* RESPONSIVE DESIGN */
 
 @media (max-width: 1100px) {
