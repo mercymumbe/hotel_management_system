@@ -139,9 +139,10 @@ function checkRoomAvailability(roomNumber, startDate, endDate) {
     for (let booking of bookings) {
 
         // Ignore the booking currently being edited
-        if (booking.bookingId === editingBookingId) {
+        if (String(booking.bookingId) === String(editingBookingId)) {
             continue;
         }
+
         if (
             String(booking.roomNumber) === String(roomNumber) &&
             String(booking.status).toLowerCase() !== "cancelled"
@@ -192,18 +193,17 @@ function displayStatistics() {
 
     for (let booking of bookings) {
 
-        if (booking.status === "Confirmed") {
+        if (String(booking.status).toLowerCase() === "confirmed") {
             confirmed++;
         }
 
-        if (booking.status === "Pending") {
+        if (String(booking.status).toLowerCase() === "pending") {
             pending++;
         }
 
-        if (booking.status === "Cancelled") {
+        if (String(booking.status).toLowerCase() === "cancelled") {
             cancelled++;
         }
-
     }
 
     totalBookings.textContent = bookings.length;
@@ -258,8 +258,8 @@ function displayBookings(records = bookings) {
                 </span>
             </td>
             <td>
-            <button class="edit-btn">Edit</button>
-            <button class="delete-btn">Delete</button></td>
+           <button type="button" class="edit-btn">Edit</button>
+<button type="button" class="delete-btn">Delete</button>
         `;
 
         // Edit button
@@ -417,20 +417,20 @@ bookingForm.addEventListener("submit", function (event) {
         // Update existing booking
         for (let booking of bookings) {
 
-           if (booking.bookingId === editingBookingId) {
+            if (booking.bookingId === editingBookingId) {
 
-    booking.customerId = customerId;
-    booking.roomNumber = roomNumber;
-    booking.checkIn = startDate;
-    booking.checkOut = endDate;
-    booking.nights = nights;
-    booking.totalCost = cost;
-    booking.status = status;
+                booking.customerId = customerId;
+                booking.roomNumber = roomNumber;
+                booking.checkIn = startDate;
+                booking.checkOut = endDate;
+                booking.nights = nights;
+                booking.totalCost = cost;
+                booking.status = status;
 
-    break;
-}
+                break;
             }
-        
+        }
+
         editingBookingId = null;
 
         alert("Booking updated successfully!");
@@ -455,19 +455,19 @@ bookingForm.addEventListener("submit", function (event) {
         bookings.push(newBooking);
     }
 
-        // Save booking
-        saveBookings();
+    // Save booking
+    saveBookings();
 
-        // Update the page
-        displayBookings(bookings);
-        displayStatistics();
+    // Update the page
+    displayBookings(bookings);
+    displayStatistics();
 
-        // Clear the form
-        bookingForm.reset();
-        totalCost.value = "";
+    // Clear the form
+    bookingForm.reset();
+    totalCost.value = "";
 
-        alert("Booking saved successfully!");
-    });
+    alert("Booking saved successfully!");
+});
 
 
 // deleting booking records
