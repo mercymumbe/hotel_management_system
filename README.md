@@ -54,6 +54,12 @@ This is a system designed to help hotel admnistratorsmanage daily operation syst
 - View payment records.
 - Track payment status.
 
+### Report management
+- Automatically retrieve data from localStorage.
+- Update statistics when new bookings or payments are recorded.
+- Display information using charts and tables.
+- Allow administrators to download reports as CSV files.
+
 ## Technologies used
 
 - HTML5
