@@ -141,7 +141,7 @@ function getRoomId(booking) {
 }
 
 
-// 5. FILTER PAYMENTS
+// filter payment section
 
 function getFilteredPayments() {
 
@@ -157,7 +157,7 @@ function getFilteredPayments() {
 }
 
 
-// 6. FILTER BOOKINGS
+// filter section
 
 function getFilteredBookings() {
 
@@ -169,9 +169,7 @@ function getFilteredBookings() {
 
 }
 
-
-// 7. CALCULATE TOTAL REVENUE
-
+// calculate total revenue
 function calculateRevenue() {
 
     let filteredPayments = getFilteredPayments();
@@ -188,9 +186,7 @@ function calculateRevenue() {
 
 }
 
-
-// 8. CALCULATE TOTAL BOOKINGS
-
+// calculate room bookings section
 function calculateBookings() {
 
     let filteredBookings = getFilteredBookings();
@@ -201,9 +197,7 @@ function calculateBookings() {
 
 }
 
-
-// 9. CALCULATE ROOM OCCUPANCY
-
+// calculate room occupancy section
 function calculateOccupancy() {
 
     let totalRooms = rooms.length;
@@ -259,9 +253,7 @@ function calculateOccupancy() {
 
 }
 
-
-// 10. CALCULATE TOTAL CUSTOMERS
-
+// calculate total customer section
 function calculateCustomers() {
 
     let customerCount = customers.length;
@@ -273,10 +265,7 @@ function calculateCustomers() {
 }
 
 
-// ==========================================
-// 11. REVENUE OVERVIEW CHART
-// ==========================================
-
+// revenue chat section
 function createRevenueChart() {
 
     let filteredPayments = getFilteredPayments();
