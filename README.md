@@ -70,7 +70,7 @@ This is a system designed to help hotel admnistratorsmanage daily operation syst
 -AI
 
 ## Project Structure
-![image of project structure](images/project_stucture.png)
+![image of project structure](images/scre)
 
 ##  How to Run the Project
 
