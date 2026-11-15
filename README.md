@@ -70,7 +70,7 @@ This is a system designed to help hotel admnistratorsmanage daily operation syst
 -AI
 
 ## Project Structure
-![image of project structure](images/scre)
+![image of project structure](images/Screenshot_projecstructure.png)
 
 ##  How to Run the Project
 
@@ -97,9 +97,9 @@ Wait a few minutes for the website to be published.
 
 ## Screenshots
 
-![image of landing page](images/Screenshot_landingpage.png)
-![image of a customer page](images/Screenshot_customer_page.png)
-![image of payments](images/Screenshot_payments_page.png)
+![image of landing page](images/Screenshot_login.png)
+![image of a reports page](images/Screenshot_reports.png)
+![image of payments](images/Screenshot_payments.png)
 
 ## Author
 
